@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pl.fitandyummy.ilebije.PudelkoActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar_ilebije"
+        />
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/mainKokpit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+
+
+        <LinearLayout
+            android:id="@+id/main_batony"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+            android:layout_weight="1"
+        android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/srodekPierwszy"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:onClick="ileMg"
+                android:src="@drawable/fiolka1_100"
+                android:text="Ile  [mg]"
+                android:textAllCaps="false" />
+
+            <ImageButton
+                android:id="@+id/srodekDrugi"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:onClick="ileMl"
+                android:src="@drawable/lotka2_100"
+                android:text="Ile  [ml]"
+                android:textAllCaps="false" />
+
+            <ImageButton
+                android:id="@+id/srodekTrzeci"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:elevation="0dp"
+                android:onClick="coIle"
+                android:src="@drawable/oomcia100"
+                android:text="Co ile  [dni]"
+                android:textAllCaps="false" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_batony2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/mainKokpit"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/srodekCzwarty"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:onClick="ileMg"
+                android:src="@drawable/oomcia2_100"
+                android:text="Ile  [mg]"
+                android:textAllCaps="false" />
+
+            <ImageButton
+                android:id="@+id/srodekPiaty"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:onClick="ileMl"
+                android:src="@drawable/lotka1_100"
+                android:text="Ile  [ml]"
+                android:textAllCaps="false" />
+
+            <ImageButton
+                android:id="@+id/srodekSzosty"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:elevation="0dp"
+                android:onClick="coIle"
+                android:src="@drawable/fiolka2_100"
+                android:text="Co ile  [dni]"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+    <ImageView
+        android:id="@+id/tlo"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.2"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/dragi" />
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
+    </com.google.android.gms.ads.AdView>
+
+
+</RelativeLayout>
+
+

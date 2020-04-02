@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pl.fitandyummy.ilebije.dupa">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar_ilebije"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/dataGodzinaLinearL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/dataLinearL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="60dp">
+
+            <Chronometer
+
+
+                android:id="@+id/chronoWork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LLchronoRest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="60dp">
+
+            <Chronometer
+                android:id="@+id/godzinaTextV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dataGodzinaLinearL"
+        android:layout_below="@id/dataGodzinaLinearL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:scaleX="1"
+        android:scaleY="1.5"
+        android:src="@drawable/start" />
+
+
+
+    <LinearLayout
+        android:id="@+id/mainKokpit"
+        android:layout_below="@id/dataGodzinaLinearL"
+        android:layout_marginTop="120dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+
+        android:layout_marginBottom="80dp"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/main_batony"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/mSvLaps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:alpha="10"
+                android:background="@color/colorPrimaryTransp"
+                android:fadingEdge="horizontal|vertical"
+                tools:alpha="50">
+
+                <TextView
+                    android:id="@+id/mEtLaps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+
+                    android:text=" SET TIME "
+                    android:textColor="@color/czarny"
+                    android:textSize="12sp"
+                    tools:text=" " />
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_batony2"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ScrollView
+                android:id="@+id/mSvLaps2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:alpha="10"
+                android:background="@color/colorPrimaryTransp"
+                android:fadingEdge="horizontal|vertical"
+                tools:alpha="50">
+
+                <TextView
+                    android:id="@+id/mEtLaps2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+
+                    android:text=" REST TIME "
+                    android:textColor="@color/czarny"
+                    android:textSize="12sp" />
+
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/tlo"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:alpha=".1"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/dragi" />
+
+
+    <ImageView
+        android:layout_above="@id/dajhajsylayout"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reset_maly"
+        android:scaleY=".8"
+        android:onClick="Reset"
+
+        />
+
+
+    <LinearLayout
+        android:id="@+id/dajhajsylayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/telebim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dataGodzinaLinearL"
+        android:layout_centerHorizontal="true"
+        android:text=" "
+        android:textSize="30sp" />
+
+
+</RelativeLayout>

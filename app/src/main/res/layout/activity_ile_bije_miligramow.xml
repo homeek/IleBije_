@@ -1,0 +1,286 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pl.fitandyummy.ilebije.IleBijeMiligramow"
+    android:orientation="vertical"
+
+    >
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar_kiedybije"
+        />
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/kokpit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textMocarnosc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="Podaj mocarność eliksiru."
+            android:textAlignment="center"
+            android:textColor="@color/czarny"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/mocarnosc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="   [mg/ml]   "
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/srodekPierwszy"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+
+                android:text="Ile  [mg]"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/srodekDrugi"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:onClick="ileMl"
+                android:text="Ile  [ml]"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/kiedyBije"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:elevation="0dp"
+                android:onClick="coIle"
+                android:text="Co ile  [dni]"
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:paddingTop="30dp"
+        android:layout_below="@id/kokpit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:src="@drawable/omcia"/>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/LLMG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/kokpit"
+        android:paddingTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+
+
+            <TextView
+                android:id="@+id/tXT1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Jeżeli kolega bije  "
+                android:textColor="@color/czarny"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/mlDlaMiligramow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint=" [ml]  "
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/TXT2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=" eliksiru   "
+                android:textColor="@color/czarny"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+
+
+            <TextView
+                android:id="@+id/TXT3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=", a strzał robi co  "
+                android:textColor="@color/czarny"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/dniDlaMiligramow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="[ilość dni]"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/TXT4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="  dni.   "
+                android:textColor="@color/czarny"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/pomozkoledze"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:onClick="licz"
+            android:layout_marginTop="10dp"
+            android:background="@color/transporange"
+            android:text="pomóż koledze" />
+
+        <LinearLayout
+            android:id="@+id/listnerMg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:paddingTop="20dp">
+
+
+            <TextView
+                android:id="@+id/TXT5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="To oznacza, że kolega ładuje"
+                android:textAlignment="center"
+                android:textColor="@color/czarny"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/wynikmg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=" xxx mg"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="26sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/TXT6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:text=" tygodniowo."
+                android:textAlignment="center"
+                android:textColor="@color/czarny"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
+    </com.google.android.gms.ads.AdView>
+
+
+
+
+
+</RelativeLayout>

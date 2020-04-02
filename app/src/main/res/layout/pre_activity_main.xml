@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pl.fitandyummy.ilebije.PreMainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar"
+        />
+
+    <ImageView
+        android:id="@+id/logos"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+
+        android:alpha="0.6"
+        android:src="@drawable/logo1200dwa" />
+
+
+
+
+    <LinearLayout
+        android:layout_below="@+id/logos"
+        android:id="@+id/mainKokpit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/main_batony"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ilebije"
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:onClick="ileMg"
+                android:text="Ile Bije"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/facebookIleBije"
+                android:layout_width="110dp"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:text="Ile ćwiczy "
+                android:onClick="FBIB"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/kiedyBije"
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:elevation="0dp"
+                android:onClick="coIle"
+                android:text="Kiedy Bije"
+                android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
+    </com.google.android.gms.ads.AdView>
+
+
+
+</RelativeLayout>
+
+

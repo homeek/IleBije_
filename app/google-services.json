@@ -1,0 +1,57 @@
+{
+  "project_info": {
+    "project_number": "1091140082873",
+    "firebase_url": "https://ile-bije.firebaseio.com",
+    "project_id": "ile-bije",
+    "storage_bucket": "ile-bije.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091140082873:android:228f77ee1fcd69ff",
+        "android_client_info": {
+          "package_name": "pl.fitandyummy.ilebije"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091140082873-a2tkisf2op6lblan8m0el1h1sm31f7qn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pl.fitandyummy.ilebije",
+            "certificate_hash": "180cc932fc3ba2ba54712d06f27263b7ba011583"
+          }
+        },
+        {
+          "client_id": "1091140082873-7mletb2vuhnl4ghob26q840tvgskeseo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pl.fitandyummy.ilebije",
+            "certificate_hash": "7f61b9f3cf47f3866345ccae0a4575d27465b405"
+          }
+        },
+        {
+          "client_id": "1091140082873-hn2kvcror2vcockuhlsmhatf6jtv14lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBjmmeuO8raeMTOFZSuK4oL5K1Kr1ZZ5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091140082873-hn2kvcror2vcockuhlsmhatf6jtv14lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-7671780201496787~8122554600"
+    }
+  ],
+  "configuration_version": "1"
+}

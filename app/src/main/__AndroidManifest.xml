@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?><!-- suppress ALL -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="pl.fitandyummy.ilebije"
+    android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.INSTANT_APP_FOREGROUND_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
+    <application
+        android:name=".broadcast.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Intro"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".broadcast.Repeating_activity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".broadcast.srodek_jeden_Notyfication_reciver"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <receiver
+            android:name=".broadcast.srodek_dwa_Notyfication_reciver"
+            android:screenOrientation="portrait" />
+        <receiver
+            android:name=".broadcast.srodek_trzy_Notyfication_reciver"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".broadcast.srodek_cztery_Notyfication_reciver"
+            android:screenOrientation="portrait" />
+        <receiver
+            android:name=".broadcast.srodek_piec_Notyfication_reciver"
+            android:screenOrientation="portrait" />
+        <receiver
+            android:name=".broadcast.srodek_szesc_Notyfication_reciver"
+            android:screenOrientation="portrait" />
+
+
+
+        <receiver
+            android:name=".broadcast.srodek_jeden_Notyfication_reciver_BOOT_COMPLETED"
+            android:exported="true"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:screenOrientation="portrait">
+           <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".broadcast.srodek_dwa_Notyfication_reciver_BOOT_COMPLETED"
+            android:exported="true"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.srodek_trzy_Notyfication_reciver_BOOT_COMPLETED"
+            android:exported="true"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.srodek_cztery_Notyfication_reciver_BOOT_COMPLETED"
+            android:exported="true"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.srodek_piec_Notyfication_reciver_BOOT_COMPLETED"
+            android:exported="true"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.srodek_szesc_Notyfication_reciver_BOOT_COMPLETED"
+            android:exported="true"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".broadcast.Finish_activity"
+            android:screenOrientation="portrait" />
+        <activity
+        android:name=".srodki.activity_srodek1"
+        android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".srodki.activity_srodek1_reload"
+            android:screenOrientation="portrait" />
+        <activity
+        android:name=".srodki.activity_srodek2_reload"
+        android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek3_reload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek4_reload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek5_reload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek6_reload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek3"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek4"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek5"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".srodki.activity_srodek6"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PudelkoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_lista_cwiczen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_lista_treningow"
+            android:screenOrientation="portrait" />
+
+
+        <receiver
+            android:name=".broadcast.KoniecNotyfication_reciver"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".broadcast.ustaw_trening_Notyfication_reciver"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".broadcast.potwierdz_trening_Notyfication_reciver"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".IleBijeMiligramow"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IleBijeMililitrow"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CoIleBije"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PreMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityUstawiaczTreningow"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".FajnaApka" />
+        <activity android:name=".FY" />
+
+        <!-- fcm -->
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ActivityIleCwiczy"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ActivityPreIleCwiczy"
+            android:screenOrientation="portrait"/>
+
+
+        <activity android:name=".dupa"></activity>
+    </application>
+
+</manifest>

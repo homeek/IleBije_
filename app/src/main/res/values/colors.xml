@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff7f2a</color>
+    <color name="colorPrimaryDark">#b73e02</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="bialy">#ffffff</color>
+    <color name="transporange">#79ffa340</color>
+    <color name="czarny">#000000</color>
+    <color name="szary">#6deaeaea</color>
+    <color name="transpGreen">#7940ff60</color>
+    <color name="transpBrowa">#471d1616</color>
+    <color name="colorPrimaryDarkTransp">#8cb73e02</color>
+    <color name="colorPrimaryTransp">#49ff7f2a</color>
+
+    <color name="colorGreenDark">#05681c</color>
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="pl.fitandyummy.ilebije.activity_lista_treningow">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar_ilebije"
+        />
+
+
+    <ImageView
+
+        android:id="@+id/tlo"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.2"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/dragi"/>
+
+
+    <TextView
+        android:id="@+id/telebim"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/toolbar"
+        android:text="MOJE TRENINGI"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="20dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaTreningowRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transpBrowa"
+        android:padding="2dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="80dp"
+
+        android:layout_below="@id/toolbar">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+
+
+        <Button
+            android:id="@+id/kolejneCwiczenie"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDarkTransp"
+            android:layout_weight="1"
+            android:text="do głównej"
+            android:onClick="doNastepnegoCwiczenia"/>
+
+        <Button
+            android:id="@+id/koniecTreningu"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transporange"
+            android:layout_weight="1"
+            android:text="zaplanuj trenig"
+            android:onClick="doListyTreningow"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pl.fitandyummy.ilebije.MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar_kiedybije"
+        />
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/mainKokpit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textMocarnosc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="130dp"
+            android:text="Podaj mocarność eliksiru."
+            android:textAlignment="center"
+            android:textColor="@color/czarny"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/mocarnosc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="  [mg/ml]  "
+            android:inputType="number"
+            android:lineSpacingExtra="16sp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:id="@+id/main_batony"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/srodekPierwszy"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:onClick="ileMg"
+                android:text="Ile  [mg]"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/srodekDrugi"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:text="Ile  [ml]"
+                android:onClick="ileMl"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/kiedyBije"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:background="@color/transporange"
+                android:elevation="0dp"
+                android:onClick="coIle"
+                android:text="Co ile  [dni]"
+                android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.2"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/dragi" />
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>
+
+
