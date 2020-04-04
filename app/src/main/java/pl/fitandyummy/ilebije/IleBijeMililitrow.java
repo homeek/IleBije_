@@ -262,4 +262,14 @@ public class IleBijeMililitrow extends AppCompatActivity {
 
         startActivity(coileintent);
     }
+
+    public void ileMl(View view) {
+        Intent ilemlintent = new Intent(this, IleBijeMililitrowCo_Dni.class);
+
+        intmocarnosc = Integer.parseInt(mocarnoscET.getText().toString());
+
+        ilemlintent.putExtra("stezenie",intmocarnosc);
+
+        startActivity(ilemlintent);
+    }
 }

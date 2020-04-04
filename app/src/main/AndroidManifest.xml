@@ -212,6 +212,9 @@
             android:name=".IleBijeMililitrow"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".IleBijeMililitrowCo_Dni"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".CoIleBije"
             android:screenOrientation="portrait" />
         <activity

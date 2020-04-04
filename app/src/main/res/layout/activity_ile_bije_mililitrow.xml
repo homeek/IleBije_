@@ -65,7 +65,8 @@
                 android:layout_height="30dp"
                 android:layout_margin="5dp"
                 android:background="@color/transporange"
-                android:text="Ile  [ml]"
+                android:onClick="ileMl"
+                android:text="[ml] / strzał"
                 android:textAllCaps="false" />
 
             <Button

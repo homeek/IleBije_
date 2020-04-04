@@ -2,24 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pl.fitandyummy.ilebije.IleBijeMiligramow"
     android:orientation="vertical"
+    tools:context="pl.fitandyummy.ilebije.IleBijeMiligramow"
 
     >
 
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/tool_bar_kiedybije"
-        />
+        layout="@layout/tool_bar_kiedybije" />
 
     <LinearLayout
-        android:layout_below="@+id/toolbar"
         android:id="@+id/kokpit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        android:padding="10dp">
 
 
         <TextView
@@ -57,7 +56,6 @@
                 android:layout_height="30dp"
                 android:layout_margin="5dp"
                 android:background="@color/transporange"
-
                 android:text="Ile  [mg]"
                 android:textAllCaps="false" />
 
@@ -86,25 +84,16 @@
         </LinearLayout>
 
 
-
-
-
     </LinearLayout>
 
 
-
     <ImageView
-        android:paddingTop="30dp"
-        android:layout_below="@id/kokpit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/kokpit"
         android:alpha="0.4"
-        android:src="@drawable/omcia"/>
-
-
-
-
-
+        android:paddingTop="30dp"
+        android:src="@drawable/omcia" />
 
 
     <LinearLayout
@@ -112,15 +101,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/kokpit"
-        android:paddingTop="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="20dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
-            >
+            android:orientation="horizontal">
 
 
             <TextView
@@ -159,14 +147,11 @@
         </LinearLayout>
 
 
-
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
-            >
+            android:orientation="horizontal">
 
 
             <TextView
@@ -209,17 +194,17 @@
             android:layout_width="250dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:onClick="licz"
             android:layout_marginTop="10dp"
             android:background="@color/transporange"
+            android:onClick="licz"
             android:text="pomóż koledze" />
 
         <LinearLayout
             android:id="@+id/listnerMg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
+            android:orientation="vertical"
             android:paddingTop="20dp">
 
 
@@ -263,24 +248,17 @@
         </LinearLayout>
 
 
-
-
     </LinearLayout>
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
-    </com.google.android.gms.ads.AdView>
-
-
-
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448"></com.google.android.gms.ads.AdView>
 
 
 </RelativeLayout>
