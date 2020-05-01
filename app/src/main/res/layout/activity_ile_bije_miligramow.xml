@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="pl.fitandyummy.ilebije.IleBijeMiligramow"
-
     >
 
 
@@ -20,7 +19,6 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-
         <TextView
             android:id="@+id/textMocarnosc"
             android:layout_width="wrap_content"
@@ -31,7 +29,6 @@
             android:textAlignment="center"
             android:textColor="@color/czarny"
             android:textSize="18sp" />
-
 
         <EditText
             android:id="@+id/mocarnosc"
@@ -80,9 +77,7 @@
                 android:text="Co ile  [dni]"
                 android:textAllCaps="false" />
 
-
         </LinearLayout>
-
 
     </LinearLayout>
 
@@ -94,7 +89,6 @@
         android:alpha="0.4"
         android:paddingTop="30dp"
         android:src="@drawable/omcia" />
-
 
     <LinearLayout
         android:id="@+id/LLMG"
@@ -109,7 +103,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal">
-
 
             <TextView
                 android:id="@+id/tXT1"
@@ -143,7 +136,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-
         </LinearLayout>
 
 
@@ -152,7 +144,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal">
-
 
             <TextView
                 android:id="@+id/TXT3"
@@ -186,7 +177,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-
         </LinearLayout>
 
         <Button
@@ -206,7 +196,6 @@
             android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingTop="20dp">
-
 
             <TextView
                 android:id="@+id/TXT5"
@@ -237,16 +226,13 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-
                 android:text=" tygodniowo."
                 android:textAlignment="center"
                 android:textColor="@color/czarny"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-
         </LinearLayout>
-
 
     </LinearLayout>
 
@@ -258,7 +244,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-7671780201496787/9727651448"></com.google.android.gms.ads.AdView>
-
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448" />
 
 </RelativeLayout>

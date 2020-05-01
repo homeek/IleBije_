@@ -13,24 +13,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-
         android:layout_margin="10dp">
-
-
 
         <TextView
             android:id="@+id/nazwaCwiczenia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-
             android:text="BANCH PRES"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="20dp"
             android:textStyle="bold" />
-
-
 
         <TextView
             android:id="@+id/WorkTime"
@@ -60,9 +53,9 @@
             android:id="@+id/RestTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/nazwyCwiczen"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
+            android:layout_toEndOf="@+id/nazwyCwiczen"
             android:text="Rest Time:"
             android:textColor="@color/czarny"
             android:textSize="14dp"
@@ -73,14 +66,13 @@
             android:id="@+id/godzinaStartu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/RestTime"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="30dp"
+            android:layout_toEndOf="@+id/RestTime"
             android:text="280s"
             android:textColor="@color/czarny"
             android:textSize="14dp"
             android:textStyle="bold" />
-
 
         <TextView
             android:id="@+id/data"
@@ -98,8 +90,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
             android:text="godzina"
             android:textColor="@color/czarny"
             android:textSize="14dp"

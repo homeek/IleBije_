@@ -14,27 +14,20 @@ public class App extends Application {
     public static final String CHANEL_5_ID = "chanel5";
     public static final String CHANEL_6_ID = "chanel6";
 
-
-
-
     public static final String CHANEL_X_ID = "chanelX";
     public static final String CHANEL_CHUJ_ID = "chanelCHUJ";
     public static final String CHANEL_CHUJX_ID = "chanelCHUJX";
-    public static final String CHANEL_1_ID_RELOAD ="chanel1reload" ;
+    public static final String CHANEL_1_ID_RELOAD = "chanel1reload";
 
     @Override
     public void onCreate() {
         super.onCreate();
-
         createNotificationChannels();
 
     }
 
     private void createNotificationChannels() {
-
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel1 = new NotificationChannel(
                     CHANEL_1_ID,
                     "chanel 1",
@@ -73,8 +66,6 @@ public class App extends Application {
                     NotificationManager.IMPORTANCE_HIGH
             );
 
-
-
             NotificationChannel channelX = new NotificationChannel(
                     CHANEL_X_ID,
                     "chanel X",
@@ -104,9 +95,6 @@ public class App extends Application {
             manager.createNotificationChannel(channelX);
             manager.createNotificationChannel(channelCHUJ);
             manager.createNotificationChannel(channelCHUJX);
-
         }
     }
-
-
 }

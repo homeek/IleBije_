@@ -14,101 +14,56 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
 
-public class srodek_cztery_Notyfication_reciver_BOOT_COMPLETED extends BroadcastReceiver  {
-
-
+public class srodek_cztery_Notyfication_reciver_BOOT_COMPLETED extends BroadcastReceiver {
 
     public AlarmManager alarmManagerCztery;
-
     public PendingIntent pendingIntentCztery;
-
     public int dataRok;
     public int dataMiesiac;
     public int dataDzien;
     public int timegodziny;
     public int timeminuty;
-
     public Integer loadOkresszesc;
-
     public Timer timer;
     public String terminNastepnegoBiciaSTR;
 
-    Boolean boolBoot=false;
-
+    Boolean boolBoot = false;
 
     @Override
     public void onReceive(final Context context4, Intent intent4) {
 
-
-        if (Intent.ACTION_BOOT_COMPLETED.equals(intent4.getAction())) {
-
-
-
-        }
-
         context4.getApplicationContext();
-
-
-
-
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context4);
 
 //value = preferences.getString("keyszesc", "defaultValue");
-        timegodziny = preferences.getInt("godzinacztery",99);
-        timeminuty = preferences.getInt("minutacztery",99);
+        timegodziny = preferences.getInt("godzinacztery", 99);
+        timeminuty = preferences.getInt("minutacztery", 99);
 
 // przekazywanie daty  po to aby wstawiał date od pierwszego bicia
-        dataDzien = preferences.getInt("dzienBiciacztery",99);
-        dataMiesiac = preferences.getInt("miesiacBiciacztery",99);
-        dataRok = preferences.getInt("rokBiciacztery",99);
+        dataDzien = preferences.getInt("dzienBiciacztery", 99);
+        dataMiesiac = preferences.getInt("miesiacBiciacztery", 99);
+        dataRok = preferences.getInt("rokBiciacztery", 99);
+        loadOkresszesc = preferences.getInt("okrescztery", 99);
 
-        loadOkresszesc = preferences.getInt("okrescztery",99);
+        boolBoot = preferences.getBoolean("bollBootcztery", false);
 
-        boolBoot = preferences.getBoolean("bollBoot",false);
-
-
-
-        if (boolBoot == false){
-
-            Toast.makeText(context4, "   " , Toast.LENGTH_LONG).show();
-
+        if (boolBoot == false) {
+            Toast.makeText(context4, " czwarty pusty  ", Toast.LENGTH_LONG).show();
 
         } else if (boolBoot == true) {
-
             Toast.makeText(context4, "    ", Toast.LENGTH_LONG).show();
 
-
             final Calendar c = Calendar.getInstance();
-            final int year = c.get(Calendar.YEAR);
-            final int month = c.get(Calendar.MONTH);
-            final int day = c.get(Calendar.DAY_OF_MONTH);
 
+//pobiera date i czas z datapickera
+            c.set(Calendar.DAY_OF_MONTH, dataDzien);
+            c.set(Calendar.MONTH, dataMiesiac);
+            c.set(Calendar.YEAR, dataRok);
+            c.set(Calendar.HOUR_OF_DAY, timegodziny);
+            c.set(Calendar.MINUTE, timeminuty);
 
-            final int h = c.get(Calendar.HOUR_OF_DAY);
-            final int m = c.get(Calendar.MINUTE);
-
-
-            //pobiera date i czas z datapickera
-
-
-
-
-        c.set(Calendar.DAY_OF_MONTH,dataDzien);
-        c.set(Calendar.MONTH,dataMiesiac);
-        c.set(Calendar.YEAR,dataRok);
-        c.set(Calendar.HOUR_OF_DAY, timegodziny);
-        c.set(Calendar.MINUTE,timeminuty);
-
-/*
-            c.set(Calendar.DAY_OF_MONTH, day);
-            c.set(Calendar.MONTH, month);
-            c.set(Calendar.YEAR, year);
-            c.set(Calendar.HOUR_OF_DAY, h);
-            c.set(Calendar.MINUTE, m + 12);
-*/
-
-            //formatuje dane na format daty do toasta
+//formatuje dane na format daty do toasta
             Date dupa2 = c.getTime();
             SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
             String date2 = sdf2.format(dupa2);
@@ -118,7 +73,6 @@ public class srodek_cztery_Notyfication_reciver_BOOT_COMPLETED extends Broadcast
             String date3 = sdf3.format(dupa3);
 
 //wiadomosc o biciu
-
             terminNastepnegoBiciaSTR = "Następne bicie _, " + " " + date2 + ",  " + date3;
 
             preferences = PreferenceManager.getDefaultSharedPreferences(context4);
@@ -126,25 +80,13 @@ public class srodek_cztery_Notyfication_reciver_BOOT_COMPLETED extends Broadcast
             editorr.putString("info4", terminNastepnegoBiciaSTR);
             editorr.apply();
 
-// wiadomosc toast
-
-            //   Toast.makeText(context4, " Potwierdzono zakłuty poślad !!!   Następne bicie  " +date2+" "+date3, Toast.LENGTH_LONG).show();
-
-
-            //tworzy intencje zbudowaną w osobnej class'ie
-
+//tworzy intencje zbudowaną w osobnej class'ie
             Intent intentCztery = new Intent(context4, srodek_cztery_Notyfication_reciver.class);
             pendingIntentCztery = PendingIntent.getBroadcast(context4, 400, intentCztery, PendingIntent.FLAG_UPDATE_CURRENT);
 
 //alarm notyfikacji z interwałem dziennym razy okres  ( w nowej wersji juz bez interwału, tylko alarm )
-
             alarmManagerCztery = (AlarmManager) context4.getSystemService(Context.ALARM_SERVICE);
             alarmManagerCztery.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntentCztery);
-
-
         }
-
-
-
     }
 }

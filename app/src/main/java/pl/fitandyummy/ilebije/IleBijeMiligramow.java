@@ -2,7 +2,9 @@ package pl.fitandyummy.ilebije;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,9 +20,6 @@ import com.google.android.gms.ads.MobileAds;
 
 public class IleBijeMiligramow extends AppCompatActivity {
 
-
-
-
     int intmocarnosc;
     double stala = 7;
     double zmiennaRaz;
@@ -30,10 +29,8 @@ public class IleBijeMiligramow extends AppCompatActivity {
 
     String stezenieStr;
 
-    TextView wynikmg, txt1,txt2,txt3,txt4,txt5,txt6, kliknij, fajnaapka, mocarnoscTxt;
+    TextView wynikmg, txt1, txt2, txt3, txt4, txt5, txt6, mocarnoscTxt;
     Button ilemg, ileml, coile, pomozkoledze;
-
-    LinearLayout dajhajsy;
 
     EditText mocarnoscET;
     EditText mlDlaMiligramow;
@@ -48,20 +45,14 @@ public class IleBijeMiligramow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ile_bije_miligramow);
 
-
-
 //baner AdMob
         MobileAds.initialize(getApplicationContext(), "ca-app-pub-7671780201496787~8122554600");
         //  MobileAds.initialize(getApplicationContext(), "ca-app-pub-3940256099942544~3347511713");
-
         mAdView = findViewById(R.id.adView);
-
         AdRequest adRequest = new AdRequest.Builder()
                 //   .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
-
         mAdView.loadAd(adRequest);
-
 
         mocarnoscET = (EditText) findViewById(R.id.mocarnosc);
 
@@ -70,30 +61,25 @@ public class IleBijeMiligramow extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent doMainIntent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent doMainIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(doMainIntent);
             }
         });
-
 
         //klik do ilebije
         ImageView kiedy = (ImageView) findViewById(R.id.toolchangeBtn);
         kiedy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent doPudelka = new Intent(getApplicationContext(),PudelkoActivity.class);
+                Intent doPudelka = new Intent(getApplicationContext(), PudelkoActivity.class);
                 startActivity(doPudelka);
             }
         });
 
-
-
-        int stezenie = getIntent().getIntExtra("stezenie",888);
+        int stezenie = getIntent().getIntExtra("stezenie", 888);
 
         stezenieStr = String.valueOf(stezenie);
         mocarnoscET.setText(stezenieStr);
-
-
 
         txt1 = (TextView) findViewById(R.id.tXT1);
         txt2 = (TextView) findViewById(R.id.TXT2);
@@ -101,19 +87,17 @@ public class IleBijeMiligramow extends AppCompatActivity {
         txt4 = (TextView) findViewById(R.id.TXT4);
         txt5 = (TextView) findViewById(R.id.TXT5);
         txt6 = (TextView) findViewById(R.id.TXT6);
-
         ilemg = (Button) findViewById(R.id.srodekPierwszy);
         ileml = (Button) findViewById(R.id.srodekDrugi);
         coile = (Button) findViewById(R.id.kiedyBije);
         pomozkoledze = (Button) findViewById(R.id.pomozkoledze);
-
         mocarnoscET = (EditText) findViewById(R.id.mocarnosc);
         mlDlaMiligramow = (EditText) findViewById(R.id.mlDlaMiligramow);
         dniDlaMiligramow = (EditText) findViewById(R.id.dniDlaMiligramow);
         mocarnoscTxt = (TextView) findViewById(R.id.textMocarnosc);
 
-    //czcionka
-        Typeface text1 = Typeface.createFromAsset(getAssets(),"fonts/KO.ttf");
+        //czcionka
+        Typeface text1 = Typeface.createFromAsset(getAssets(), "fonts/KO.ttf");
         txt1.setTypeface(text1);
         txt2.setTypeface(text1);
         txt3.setTypeface(text1);
@@ -130,20 +114,19 @@ public class IleBijeMiligramow extends AppCompatActivity {
         ileml.setTypeface(text1);
         coile.setTypeface(text1);
         pomozkoledze.setTypeface(text1);
-
     }
 
     public void ileMl(View view) {
         Intent ilemlintent = new Intent(this, IleBijeMililitrow.class);
         intmocarnosc = Integer.parseInt(mocarnoscET.getText().toString());
-        ilemlintent.putExtra("stezenie",intmocarnosc);
+        ilemlintent.putExtra("stezenie", intmocarnosc);
         startActivity(ilemlintent);
     }
 
     public void coIle(View view) {
         Intent coilebijeintent = new Intent(this, CoIleBije.class);
         intmocarnosc = Integer.parseInt(mocarnoscET.getText().toString());
-        coilebijeintent.putExtra("stezenie",intmocarnosc);
+        coilebijeintent.putExtra("stezenie", intmocarnosc);
         startActivity(coilebijeintent);
     }
 
@@ -153,7 +136,7 @@ public class IleBijeMiligramow extends AppCompatActivity {
         mlDlaMiligramow = (EditText) findViewById(R.id.mlDlaMiligramow);
         dniDlaMiligramow = (EditText) findViewById(R.id.dniDlaMiligramow);
 
-        if (mocarnoscET.getText().toString().equals("")|| mlDlaMiligramow.getText().toString().equals("") || dniDlaMiligramow.getText().toString().equals("")) {
+        if (mocarnoscET.getText().toString().equals("") || mlDlaMiligramow.getText().toString().equals("") || dniDlaMiligramow.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Uzupełnij dane Dziku ", Toast.LENGTH_LONG).show();
 
         } else {
@@ -162,13 +145,12 @@ public class IleBijeMiligramow extends AppCompatActivity {
             mlNaMg = Double.parseDouble(mlDlaMiligramow.getText().toString());
             dniNaMg = Integer.parseInt(dniDlaMiligramow.getText().toString());
 
-            zmiennaRaz = mlNaMg * stala/ dniNaMg;
-            intmiligramy = zmiennaRaz *intmocarnosc;
+            zmiennaRaz = mlNaMg * stala / dniNaMg;
+            intmiligramy = zmiennaRaz * intmocarnosc;
 
             r = Math.round(intmiligramy * 10.0) / 10.0;
             wynikmg = (TextView) findViewById(R.id.wynikmg);
             wynikmg.setText(String.valueOf("  " + r + "  mg"));
-
         }
 
         //zagłębiony czy zduplikowany Listner działa dopiero po drugim nacisnieciu batona
@@ -176,45 +158,26 @@ public class IleBijeMiligramow extends AppCompatActivity {
         pomozkoledze.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                if (mocarnoscET.getText().toString().equals("")|| mlDlaMiligramow.getText().toString().equals("") || dniDlaMiligramow.getText().toString().equals("")) {
+                if (mocarnoscET.getText().toString().equals("") || mlDlaMiligramow.getText().toString().equals("") || dniDlaMiligramow.getText().toString().equals("")) {
 
                     Toast.makeText(getApplicationContext(), "Uzupełnij dane Dziku ", Toast.LENGTH_LONG).show();
 
                 } else {
 
+                    //powtorzona czynność zeby liczył za kazdym razem
+                    intmocarnosc = Integer.parseInt(mocarnoscET.getText().toString());
 
+                    mlNaMg = Double.parseDouble(mlDlaMiligramow.getText().toString());
+                    dniNaMg = Integer.parseInt(dniDlaMiligramow.getText().toString());
 
-                //powtorzona czynność zeby liczył za kazdym razem
-                intmocarnosc = Integer.parseInt(mocarnoscET.getText().toString());
+                    zmiennaRaz = mlNaMg * stala / dniNaMg;
+                    intmiligramy = zmiennaRaz * intmocarnosc;
+                    r = Math.round(intmiligramy * 10.0) / 10.0;
 
-                mlNaMg = Double.parseDouble(mlDlaMiligramow.getText().toString());
-                dniNaMg = Integer.parseInt(dniDlaMiligramow.getText().toString());
-
-
-                zmiennaRaz = mlNaMg * stala/ dniNaMg;
-
-                intmiligramy = zmiennaRaz *intmocarnosc;
-
-                r = Math.round(intmiligramy * 10.0) / 10.0;
-
-
-                wynikmg = (TextView) findViewById(R.id.wynikmg);
-                wynikmg.setText(String.valueOf("  " + r + "  mg"));
-
-
-
-
-
-               // fajnaapka = (TextView) findViewById(R.id.fajnaapka);
-               // kliknij = (TextView) findViewById(R.id.kliknij);
-               // fajnaapka.setText("KLIKNIJ TUTAJ !!!");
-               // kliknij.setText("Fajna apka ???");
-
-            }}
+                    wynikmg = (TextView) findViewById(R.id.wynikmg);
+                    wynikmg.setText(String.valueOf("  " + r + "  mg"));
+                }
+            }
         });
-
     }
-
-
-
 }

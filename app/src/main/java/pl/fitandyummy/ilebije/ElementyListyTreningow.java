@@ -4,11 +4,9 @@ public class ElementyListyTreningow {
 
     private String komentarzCwiczenn;
     private String nazwaCwiczenienn;
-
     private String godzinaStartuu;
     private String godzinaZakonczeniaa;
     private String dataaa;
-
 
     public String getKomentarzCwiczenn() {
         return komentarzCwiczenn;
@@ -50,20 +48,12 @@ public class ElementyListyTreningow {
         this.dataaa = dataa;
     }
 
-    public ElementyListyTreningow(String komentarzCwiczen, String nazwaCwiczenia, String godzinaStartu, String godzinaZakonczenia , String data ) {
+    public ElementyListyTreningow(String komentarzCwiczen, String nazwaCwiczenia, String godzinaStartu, String godzinaZakonczenia, String data) {
 
-        komentarzCwiczenn=komentarzCwiczen;
-        nazwaCwiczenienn=nazwaCwiczenia;
-        godzinaStartuu=godzinaStartu;
-
-        godzinaZakonczeniaa=godzinaZakonczenia;
-        dataaa=data;
-
-
-
-
-
-
+        komentarzCwiczenn = komentarzCwiczen;
+        nazwaCwiczenienn = nazwaCwiczenia;
+        godzinaStartuu = godzinaStartu;
+        godzinaZakonczeniaa = godzinaZakonczenia;
+        dataaa = data;
     }
-
 }

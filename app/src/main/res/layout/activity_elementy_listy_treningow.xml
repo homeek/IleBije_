@@ -6,25 +6,20 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:background="@color/colorPrimaryDark"
-
     android:padding="20dp"
     app:cardCornerRadius="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-
         android:layout_margin="10dp">
-
-
 
         <TextView
             android:id="@+id/komentarzTreningu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/nazwyCwiczen"
+            android:layout_alignParentTop="true"
             android:text="TRENING SILOWY"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="20dp"
@@ -54,86 +49,70 @@
             android:textStyle="bold" />
 
 
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="25dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="25dp"
             android:orientation="vertical">
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-
-
-        <TextView
-            android:id="@+id/startAt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/nazwyCwiczen"
-
-
-            android:text="start at : "
-            android:textColor="@color/czarny"
-            android:textSize="14dp"
-            android:textStyle="bold" />
-
-
-
-
-
-        <TextView
-            android:id="@+id/godzinaStartu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/startAt"
-            android:layout_marginLeft="5dp"
-
-            android:text="21:20"
-            android:textColor="@color/czarny"
-            android:textSize="14dp"
-            android:textStyle="bold" />
-
-
-        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/startAt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/nazwyCwiczen"
+                    android:text="start at : "
+                    android:textColor="@color/czarny"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
 
-
-        <TextView
-            android:id="@+id/endAt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/godzinaStartu"
-
-
-            android:text="end at : "
-            android:textColor="@color/czarny"
-            android:textSize="14dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/godzinaZakonczenia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/endAt"
-            android:layout_marginLeft="5dp"
-
-            android:text="23:26"
-            android:textColor="@color/czarny"
-            android:textSize="14dp"
-            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/godzinaStartu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@+id/startAt"
+                    android:text="21:20"
+                    android:textColor="@color/czarny"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
-    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/endAt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/godzinaStartu"
+                    android:text="end at : "
+                    android:textColor="@color/czarny"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/godzinaZakonczenia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@id/endAt"
+                    android:text="23:26"
+                    android:textColor="@color/czarny"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

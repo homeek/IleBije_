@@ -4,26 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="pl.fitandyummy.ilebije.activity_lista_treningow">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/tool_bar_ilebije"
-        />
+        layout="@layout/tool_bar_ilebije" />
 
 
     <ImageView
-
         android:id="@+id/tlo"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:alpha="0.2"
         android:scaleX="1.2"
         android:scaleY="1.2"
-        android:src="@drawable/dragi"/>
+        android:src="@drawable/dragi" />
 
 
     <TextView
@@ -31,29 +27,24 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@+id/toolbar"
+        android:layout_marginTop="20dp"
         android:text="MOJE TRENINGI"
         android:textAlignment="center"
-        android:textSize="20dp"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="20dp"
-        />
+        android:textSize="20dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaTreningowRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/transpBrowa"
-        android:padding="2dp"
-        android:scrollbars="vertical"
+        android:layout_below="@id/toolbar"
         android:layout_marginTop="65dp"
         android:layout_marginBottom="80dp"
-
-        android:layout_below="@id/toolbar">
+        android:background="@color/transpBrowa"
+        android:padding="2dp"
+        android:scrollbars="vertical">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,29 +53,27 @@
         android:layout_margin="10dp"
         android:orientation="horizontal">
 
-
-
         <Button
             android:id="@+id/kolejneCwiczenie"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDarkTransp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="do głównej"
-            android:onClick="doNastepnegoCwiczenia"/>
+            android:background="@color/colorPrimaryDarkTransp"
+            android:onClick="doNastepnegoCwiczenia"
+            android:text="do głównej" />
 
         <Button
             android:id="@+id/koniecTreningu"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:background="@color/transporange"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="zaplanuj trenig"
-            android:onClick="doListyTreningow"/>
+            android:background="@color/transporange"
+            android:onClick="doListyTreningow"
+            android:text="zaplanuj trenig" />
 
     </LinearLayout>
 

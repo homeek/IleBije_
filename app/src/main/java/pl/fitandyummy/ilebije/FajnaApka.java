@@ -2,7 +2,9 @@ package pl.fitandyummy.ilebije;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,31 +21,21 @@ public class FajnaApka extends AppCompatActivity {
     private TpayPayment.Builder paymentBulider = null;
 
     TextView dorzucam, dzikow, dzik, mocarnoscTxt;
-
     Button pomozkoledze;
-
     EditText kwota;
-
     String kwotaString;
-
-
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fajna_apka);
-
-       // EditText kwota = (EditText)findViewById(R.id.kwota);
-       // String kwotaString = kwota.getText().toString();
-
         setupPayment(savedInstanceState);
-
         ImageView back = (ImageView) findViewById(R.id.toolbarArrowbackBtn);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent doMainIntent = new Intent(getApplicationContext(),PreMainActivity.class);
+                Intent doMainIntent = new Intent(getApplicationContext(), PreMainActivity.class);
                 startActivity(doMainIntent);
             }
         });
@@ -55,8 +47,8 @@ public class FajnaApka extends AppCompatActivity {
         kwota = (EditText) findViewById(R.id.kwota);
         pomozkoledze = (Button) findViewById(R.id.pomozkoledze);
 
-        Typeface text1 = Typeface.createFromAsset(getAssets(),"fonts/KO.ttf");
-        Typeface text2 = Typeface.createFromAsset(getAssets(),"fonts/SO.ttf");
+        Typeface text1 = Typeface.createFromAsset(getAssets(), "fonts/KO.ttf");
+        Typeface text2 = Typeface.createFromAsset(getAssets(), "fonts/SO.ttf");
 
         mocarnoscTxt.setTypeface(text1);
         dorzucam.setTypeface(text1);
@@ -67,16 +59,10 @@ public class FajnaApka extends AppCompatActivity {
 
         kwotaString = kwota.getText().toString();
 
-
-
-
         pomozkoledze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 setupPayment(savedInstanceState);
-
-
 
                 final Intent payIntent = new Intent(FajnaApka.this, TpayActivity.class);
                 final TpayPayment tpayPayment = paymentBulider.create();
@@ -84,48 +70,27 @@ public class FajnaApka extends AppCompatActivity {
                 startActivityForResult(payIntent, TpayActivity.TPAY_PAYMENT_REQUEST);
             }
         });
-
-
     }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case TpayActivity.TPAY_PAYMENT_REQUEST:
                 if (resultCode == RESULT_OK) {
-
                     Toast.makeText(getApplicationContext(), "Niech najlepsza jakościowo masa będzie zawsze z Tobą :D ", Toast.LENGTH_SHORT).show();
-                    // Snack.make(findViewById(R.id.fab), "Płatność została wykonana poprawnie", Snackbar.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "Płatność nie została wykonana poprawnie", Toast.LENGTH_SHORT).show();
-                    // Snackbar.make(findViewById(R.id.fab), "Płatność nie została wykonana", Snackbar.LENGTH_SHORT).show();
                 }
             default:
                 super.onActivityResult(requestCode, resultCode, data);
         }
     }
 
-
-
-
-
     private void setupPayment(Bundle savedInstanceState) {
-
-        EditText kwota = (EditText)findViewById(R.id.kwota);
+        EditText kwota = (EditText) findViewById(R.id.kwota);
         String kwotaString = kwota.getText().toString();
 
-      //  String duppa = ((EditText) findViewById(R.id.kwota)).getText().toString();
-
         if (savedInstanceState == null) {
-
-
-
-
-
-
-
             paymentBulider = new TpayPayment.Builder()
                     .setId("30944")
                     .setAmount(kwotaString)
@@ -136,33 +101,13 @@ public class FajnaApka extends AppCompatActivity {
                     .setClientName("podaj imie i nazwisko");
 
         } else {
-
-
-
             paymentBulider = savedInstanceState.getParcelable(TpayActivity.EXTRA_TPAY_PAYMENT);
         }
     }
 
-   /* private void setupPayButton() {
-        findViewById(R.id.potwierdzamIPlaceBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Intent payIntent = new Intent(PotwierdzenieActivity.this, TpayActivity.class);
-                final TpayPayment tpayPayment = paymentBulider.create();
-                payIntent.putExtra(TpayActivity.EXTRA_TPAY_PAYMENT, tpayPayment);
-                startActivityForResult(payIntent, TpayActivity.TPAY_PAYMENT_REQUEST);
-            }
-        });
-    }*/
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
-       // EditText kwota = (EditText)findViewById(R.id.kwota);
-       // String kwotaString = kwota.getText().toString();
-
         outState.putParcelable(TpayActivity.EXTRA_TPAY_PAYMENT, paymentBulider);
     }
-
 }

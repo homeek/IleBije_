@@ -8,9 +8,7 @@
     <uses-permission
         android:name="android.permission.INSTANT_APP_FOREGROUND_SERVICE"
         tools:ignore="ProtectedPermissions" />
-
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
@@ -30,9 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".broadcast.Repeating_activity"
-            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".broadcast.srodek_jeden_Notyfication_reciver"
@@ -44,9 +39,7 @@
         <receiver
             android:name=".broadcast.srodek_trzy_Notyfication_reciver"
             android:exported="true"
-            android:screenOrientation="portrait">
-        </receiver>
-
+            android:screenOrientation="portrait" />
         <receiver
             android:name=".broadcast.srodek_cztery_Notyfication_reciver"
             android:screenOrientation="portrait" />
@@ -57,104 +50,91 @@
             android:name=".broadcast.srodek_szesc_Notyfication_reciver"
             android:screenOrientation="portrait" />
 
-
-
-
         <receiver
             android:name=".broadcast.srodek_jeden_Notyfication_reciver_BOOT_COMPLETED"
-            android:screenOrientation="portrait"
-            android:exported="true"
             android:enabled="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
 
             </intent-filter>
         </receiver>
-
 
         <receiver
             android:name=".broadcast.srodek_dwa_Notyfication_reciver_BOOT_COMPLETED"
-            android:screenOrientation="portrait"
-            android:exported="true"
             android:enabled="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
 
             </intent-filter>
         </receiver>
-
 
         <receiver
             android:name=".broadcast.srodek_trzy_Notyfication_reciver_BOOT_COMPLETED"
-            android:screenOrientation="portrait"
-            android:exported="true"
             android:enabled="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
 
             </intent-filter>
         </receiver>
-
 
         <receiver
             android:name=".broadcast.srodek_cztery_Notyfication_reciver_BOOT_COMPLETED"
-            android:screenOrientation="portrait"
-            android:exported="true"
             android:enabled="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
 
             </intent-filter>
         </receiver>
-
 
         <receiver
             android:name=".broadcast.srodek_piec_Notyfication_reciver_BOOT_COMPLETED"
-            android:screenOrientation="portrait"
-            android:exported="true"
             android:enabled="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
 
             </intent-filter>
         </receiver>
-
 
         <receiver
             android:name=".broadcast.srodek_szesc_Notyfication_reciver_BOOT_COMPLETED"
-            android:screenOrientation="portrait"
-            android:exported="true"
             android:enabled="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
 
             </intent-filter>
         </receiver>
 
-
-
-
-
-
         <activity
-            android:name=".broadcast.Finish_activity"
+            android:name=".chuuujek"
             android:screenOrientation="portrait" />
-        <activity
-        android:name=".srodki.activity_srodek1"
-        android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".srodki.activity_srodek1"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".srodki.activity_srodek1_reload"
             android:screenOrientation="portrait" />
         <activity
-        android:name=".srodki.activity_srodek2_reload"
-        android:screenOrientation="portrait" />
+            android:name=".srodki.activity_srodek2_reload"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".srodki.activity_srodek3_reload"
             android:screenOrientation="portrait" />
@@ -192,19 +172,15 @@
             android:name=".activity_lista_treningow"
             android:screenOrientation="portrait" />
 
-
         <receiver
             android:name=".broadcast.KoniecNotyfication_reciver"
             android:screenOrientation="portrait" />
-
         <receiver
             android:name=".broadcast.ustaw_trening_Notyfication_reciver"
             android:screenOrientation="portrait" />
-
         <receiver
             android:name=".broadcast.potwierdz_trening_Notyfication_reciver"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".IleBijeMiligramow"
             android:screenOrientation="portrait" />
@@ -237,24 +213,28 @@
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".ActivityIleCwiczy"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityPreIleCwiczy"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".ActivityIleCwiczy"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityPreIleCwiczy"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".LogIn"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Register"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true"/>
-
+            android:value="true" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7671780201496787~8122554600"/>
+            android:value="ca-app-pub-7671780201496787~8122554600" />
 
-        <activity android:name=".dupa"></activity>
     </application>
-
 
 </manifest>

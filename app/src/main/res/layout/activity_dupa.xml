@@ -9,8 +9,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/tool_bar_ilebije"
-        />
+        layout="@layout/tool_bar_ilebije" />
 
 
     <LinearLayout
@@ -30,8 +29,6 @@
             android:layout_marginRight="60dp">
 
             <Chronometer
-
-
                 android:id="@+id/chronoWork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,26 +60,23 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/dataGodzinaLinearL"
         android:layout_below="@id/dataGodzinaLinearL"
+        android:layout_alignTop="@+id/dataGodzinaLinearL"
         android:layout_centerHorizontal="true"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
         android:scaleX="1"
         android:scaleY="1.5"
         android:src="@drawable/start" />
 
 
-
     <LinearLayout
         android:id="@+id/mainKokpit"
-        android:layout_below="@id/dataGodzinaLinearL"
-        android:layout_marginTop="120dp"
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/dataGodzinaLinearL"
         android:layout_centerInParent="true"
-
+        android:layout_marginTop="120dp"
         android:layout_marginBottom="80dp"
         android:orientation="horizontal">
 
@@ -100,8 +94,8 @@
                 android:id="@+id/mSvLaps"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:alpha="10"
                 android:background="@color/colorPrimaryTransp"
                 android:fadingEdge="horizontal|vertical"
@@ -113,7 +107,6 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:padding="5dp"
-
                     android:text=" SET TIME "
                     android:textColor="@color/czarny"
                     android:textSize="12sp"
@@ -139,8 +132,8 @@
                 android:id="@+id/mSvLaps2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:alpha="10"
                 android:background="@color/colorPrimaryTransp"
                 android:fadingEdge="horizontal|vertical"
@@ -152,11 +145,9 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:padding="5dp"
-
                     android:text=" REST TIME "
                     android:textColor="@color/czarny"
                     android:textSize="12sp" />
-
 
             </ScrollView>
 
@@ -170,8 +161,8 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:alpha=".1"
         android:scaleX="1.2"
@@ -180,14 +171,13 @@
 
 
     <ImageView
-        android:layout_above="@id/dajhajsylayout"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/reset_maly"
-        android:scaleY=".8"
+        android:layout_above="@id/dajhajsylayout"
+        android:layout_centerInParent="true"
         android:onClick="Reset"
-
+        android:scaleY=".8"
+        android:src="@drawable/reset_maly"
         />
 
 
@@ -196,15 +186,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-
         android:layout_marginBottom="12dp"
         android:gravity="center"
         android:orientation="vertical">
-
-
-
-
-
 
     </LinearLayout>
 

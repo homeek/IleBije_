@@ -6,21 +6,17 @@
     android:layout_height="match_parent"
     tools:context="pl.fitandyummy.ilebije.ActivityIleCwiczy">
 
-
-
     <include
         android:id="@+id/toolbar"
-        layout="@layout/tool_bar_ilebije"
-        />
-
+        layout="@layout/tool_bar_ilebije" />
 
     <TextView
         android:id="@+id/telebim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:text=" n "
         android:textSize="20dp" />
 
@@ -41,13 +37,10 @@
             android:layout_marginRight="60dp">
 
             <Chronometer
-
-
                 android:id="@+id/chronoWork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp" />
-
 
         </LinearLayout>
 
@@ -69,34 +62,27 @@
 
     </LinearLayout>
 
-
     <ImageView
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/dataGodzinaLinearL"
         android:layout_below="@id/dataGodzinaLinearL"
+        android:layout_alignTop="@+id/dataGodzinaLinearL"
         android:layout_centerHorizontal="true"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:scaleX="1"
         android:scaleY="1.5"
         android:src="@drawable/start" />
 
-
-
     <LinearLayout
         android:id="@+id/mainKokpit"
-        android:layout_below="@id/button2"
-        android:layout_marginTop="1dp"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/button2"
         android:layout_centerInParent="true"
-
-
+        android:layout_marginTop="1dp"
         android:orientation="horizontal">
-
 
         <LinearLayout
             android:id="@+id/main_batony"
@@ -111,30 +97,23 @@
                 android:id="@+id/mSvLaps"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:alpha="10"
                 android:background="@color/colorPrimaryTransp"
                 android:fadingEdge="horizontal|vertical"
-                tools:alpha="50">
-            </androidx.recyclerview.widget.RecyclerView>
+                tools:alpha="50" />
 
-
-                <TextView
-                    android:id="@+id/mEtLaps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:padding="5dp"
-
-                    android:text="   "
-                    android:textColor="@color/czarny"
-                    android:textSize="12sp"
-                    tools:text=" " />
-
-
-
-
+            <TextView
+                android:id="@+id/mEtLaps"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="   "
+                android:textColor="@color/czarny"
+                android:textSize="12sp"
+                tools:text=" " />
 
         </LinearLayout>
 
@@ -147,29 +126,16 @@
             android:gravity="center"
             android:orientation="vertical">
 
-
-
-
-
-
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/mSvLaps2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:alpha="10"
                 android:background="@color/colorPrimaryTransp"
                 android:fadingEdge="horizontal|vertical"
-                tools:alpha="50">
-            </androidx.recyclerview.widget.RecyclerView>
-
-
-
-
-
-
+                tools:alpha="50" />
 
         </LinearLayout>
 
@@ -183,36 +149,32 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
-
         <ImageView
             android:id="@+id/trzydziesciSOff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/trzydziescisoff2"
             android:layout_weight="1"
             android:onClick="onTrzydziesciS"
-            />
+            android:src="@drawable/trzydziescisoff2" />
 
         <ImageView
             android:id="@+id/szescdziesiatSOff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/szesdziesiatsoff2"
             android:layout_weight="1"
             android:onClick="onSzescdziesiatS"
+            android:src="@drawable/szesdziesiatsoff2"
 
             />
 
-            </LinearLayout>
-
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/tlo"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:alpha=".1"
         android:scaleX="1.2"
@@ -227,14 +189,12 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
-
         <TextView
             android:id="@+id/sumaWork"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="    "
-
             android:textAlignment="center" />
 
         <TextView
@@ -243,14 +203,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="   "
-
-
             android:textAlignment="center" />
 
     </LinearLayout>
-
-
-
 
     <LinearLayout
         android:id="@+id/StopReset"
@@ -260,64 +215,41 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
-
         <ImageView
             android:id="@+id/savebutton"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/stop"
-            android:scaleY="1.6"
-            android:onClick="Stop"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-
+            android:onClick="Stop"
+            android:scaleY="1.6"
+            android:src="@drawable/stop"
             />
 
         <ImageView
             android:id="@+id/Reset"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/reset"
-            android:scaleY="1.6"
-            android:onClick="Reset"
+            android:layout_centerInParent="true"
             android:layout_margin="20dp"
             android:layout_weight="1"
-
-
+            android:onClick="Reset"
+            android:scaleY="1.6"
+            android:src="@drawable/reset"
             />
 
     </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
-    </com.google.android.gms.ads.AdView>
-
-
-
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448" />
 
 </RelativeLayout>
-
-

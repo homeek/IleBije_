@@ -1,6 +1,7 @@
 package pl.fitandyummy.ilebije;
 
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,7 @@ public class AdapterTowarow extends RecyclerView.Adapter<AdapterTowarow.TowarVie
 
     public ArrayList<ElementyKalendarza> listaTowarow;
 
-    public static class TowarViewHolder extends RecyclerView.ViewHolder {
-
+    static class TowarViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView ikonaa;
         public TextView nazwaTowara;
@@ -23,7 +23,6 @@ public class AdapterTowarow extends RecyclerView.Adapter<AdapterTowarow.TowarVie
         public TextView ktoryStrzl;
         public TextView dataa;
         public TextView godzinaa;
-
 
         public TowarViewHolder(View itemView) {
             super(itemView);
@@ -35,44 +34,35 @@ public class AdapterTowarow extends RecyclerView.Adapter<AdapterTowarow.TowarVie
             ktoryStrzl = itemView.findViewById(R.id.ktoryET);
             dataa = itemView.findViewById(R.id.data);
             godzinaa = itemView.findViewById(R.id.godzinaZakonczenia);
-
-
         }
-
     }
 
-    public AdapterTowarow(ArrayList<ElementyKalendarza> lista){
+    public AdapterTowarow(ArrayList<ElementyKalendarza> lista) {
         listaTowarow = lista;
-
     }
 
     @Override
     public TowarViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View V = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_elementy_kalendarza,parent,false);
+        View V = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_elementy_kalendarza, parent, false);
         TowarViewHolder evh = new TowarViewHolder(V);
         return evh;
-
     }
 
     @Override
     public void onBindViewHolder(TowarViewHolder holder, int position) {
-
         ElementyKalendarza danyElement = listaTowarow.get(position);
-
 
         holder.ikonaa.setImageResource(danyElement.getIkonaa());
         holder.nazwaTowara.setText(danyElement.getNazwaTowara());
         holder.iloscTowara.setText(danyElement.getIloscTowara());
-        holder.strzalll.setText(String.valueOf( danyElement.getStrzalll()));
+        holder.strzalll.setText(String.valueOf(danyElement.getStrzalll()));
         holder.ktoryStrzl.setText(String.valueOf(danyElement.getKtoryStrzl()));
         holder.dataa.setText(String.valueOf(danyElement.getDataa()));
         holder.godzinaa.setText(danyElement.getGodzinaa());
-
-
     }
 
     @Override
     public int getItemCount() {
-        return listaTowarow.size() ;
+        return listaTowarow.size();
     }
 }

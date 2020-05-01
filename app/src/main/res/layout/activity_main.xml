@@ -9,20 +9,13 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/tool_bar_kiedybije"
-        />
-
-
-
-
-
+        layout="@layout/tool_bar_kiedybije" />
 
     <LinearLayout
         android:id="@+id/mainKokpit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
 
         <TextView
             android:id="@+id/textMocarnosc"
@@ -34,7 +27,6 @@
             android:textAlignment="center"
             android:textColor="@color/czarny"
             android:textSize="18sp" />
-
 
         <EditText
             android:id="@+id/mocarnosc"
@@ -49,11 +41,11 @@
 
         <LinearLayout
             android:id="@+id/main_batony"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/srodekPierwszy"
@@ -71,8 +63,8 @@
                 android:layout_height="30dp"
                 android:layout_margin="5dp"
                 android:background="@color/transporange"
-                android:text="Ile  [ml]"
                 android:onClick="ileMl"
+                android:text="Ile  [ml]"
                 android:textAllCaps="false" />
 
             <Button
@@ -85,11 +77,8 @@
                 android:onClick="coIle"
                 android:text="Co ile  [dni]"
                 android:textAllCaps="false" />
-
+        </LinearLayout>
     </LinearLayout>
-
-    </LinearLayout>
-
 
     <ImageView
         android:layout_width="match_parent"
@@ -100,19 +89,14 @@
         android:scaleY="1.2"
         android:src="@drawable/dragi" />
 
-
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448" />
 
 </RelativeLayout>
-
-

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pl.fitandyummy.ilebije.Register">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar_kiedybije" />
+
+    <LinearLayout
+        android:id="@+id/mainKokpit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textZarejestruj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="130dp"
+            android:text=" Zarejestruj się. "
+            android:textAlignment="center"
+            android:textColor="@color/czarny"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:hint=" login / email "
+            android:inputType="textWebEmailAddress"
+            android:lineSpacingExtra="16sp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="  password  "
+            android:inputType="textVisiblePassword"
+            android:lineSpacingExtra="16sp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/ciach"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:background="@color/transporange"
+            android:onClick=" ciach "
+            android:text=" ciach "
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/ciachfStore"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:background="@color/transporange"
+            android:onClick="ciachfStore"
+            android:text=" ciach "
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/textButtonZaloguj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text=" masz konto ?? Zaloguj sie. "
+            android:textAlignment="center"
+            android:textColor="@color/czarny"
+            android:textSize="12sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.2"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/dragi" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448" />
+
+</RelativeLayout>

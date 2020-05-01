@@ -6,25 +6,18 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:background="@color/colorPrimaryDark"
-
     android:padding="10dp"
     app:cardCornerRadius="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-
         android:layout_margin="2dp">
-
-
 
         <TextView
             android:id="@+id/RestWork"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
             android:text="REST/WORK"
             android:textColor="@color/czarny"
             android:textSize="15dp"
@@ -34,7 +27,6 @@
             android:id="@+id/ktoryET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_alignParentTop="true"
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/RestWork"
@@ -42,7 +34,6 @@
             android:textColor="@color/czarny"
             android:textSize="15dp"
             android:textStyle="bold" />
-
 
         <TextView
             android:id="@+id/data"
@@ -54,8 +45,6 @@
             android:textColor="@color/czarny"
             android:textSize="15dp"
             android:textStyle="bold" />
-
-
 
     </RelativeLayout>
 

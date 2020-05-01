@@ -9,12 +9,12 @@ public class ElementyKalendarza {
     private String iloscTowara;
     private String strzalll;
     private int ktoryStrzl;
-    private String dataa;
+    private String dataa = "";
     private String godzinaa;
 
+    public ElementyKalendarza() {
 
-
-
+    }
 
     public int getIkonaa() {
         return ikonaa;
@@ -72,21 +72,13 @@ public class ElementyKalendarza {
         this.godzinaa = godzinaa;
     }
 
-    public ElementyKalendarza (int ikona, String nazwatowaru, String ilosctowaru, String strzal, int ktorystrzal, String data, String godzina) {
-        ikonaa=ikona;
-        nazwaTowara=nazwatowaru;
-        iloscTowara=ilosctowaru;
-        strzalll =strzal;
-        ktoryStrzl=ktorystrzal;
-        dataa=data;
-        godzinaa=godzina;
-
-
-
-
-
-
-
+    public ElementyKalendarza(int ikona, String nazwatowaru, String ilosctowaru, String strzal, int ktorystrzal, String data, String godzina) {
+        ikonaa = ikona;
+        nazwaTowara = nazwatowaru;
+        iloscTowara = ilosctowaru;
+        strzalll = strzal;
+        ktoryStrzl = ktorystrzal;
+        dataa = data;
+        godzinaa = godzina;
     }
-
 }

@@ -47,23 +47,13 @@ public class ElementyListyCwiczen {
 
     public void setGodzinaa(String godzinaa) {
         this.godzinaa = godzinaa;
-
     }
 
-    public ElementyListyCwiczen( String nazwaCwiczenia, String czasWork,  String czasRest, String data, String godzina) {
-
-        nazwaCwiczeniaa=nazwaCwiczenia;
-        czasWorkk=czasWork;
-        czasRestt=czasRest;
-        dataa=data;
-        godzinaa=godzina;
-
-
-
-
-
-
-
+    public ElementyListyCwiczen(String nazwaCwiczenia, String czasWork, String czasRest, String data, String godzina) {
+        nazwaCwiczeniaa = nazwaCwiczenia;
+        czasWorkk = czasWork;
+        czasRestt = czasRest;
+        dataa = data;
+        godzinaa = godzina;
     }
-
 }

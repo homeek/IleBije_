@@ -9,8 +9,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/tool_bar"
-        />
+        layout="@layout/tool_bar" />
 
 
     <TextView
@@ -19,8 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_gravity="center"
-
-
         android:text="  BYKU  "
         android:textAlignment="center"
         android:textColor="@color/czarny"
@@ -33,7 +30,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dzik"
         android:layout_gravity="center"
-
         android:padding="20dp"
         android:text=" Jeśli nasza aplikacja sprawiła, że Twój Kolega będzie mógł precyzyjniej dobierać suplementacje. Jeżeli uważasz, że stworzenie takiej aplikacji to dobry pomysł, lub jeśli nasza aplikacja zwyczajnie poprawiła Tobie humor.  Rozważ proszę możliwość symbolicznego wsparcia appki, a zobowiązujemy się rozbudować ją o inne funkcje, dzięki którym Kolega będzie mógł precyzyjnie kontrolować suplementacje. "
         android:textAlignment="center"
@@ -44,9 +40,9 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:alpha="0.2"
         android:paddingTop="180dp"
         android:src="@drawable/dragi" />
@@ -93,7 +89,6 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-
             android:text=" PLN."
             android:textAlignment="center"
             android:textColor="@color/czarny"
@@ -108,19 +103,11 @@
         android:layout_width="250dp"
         android:layout_height="30dp"
         android:layout_below="@+id/LLzrzutka"
-
-
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
         android:background="@color/transporange"
         android:gravity="center"
-
         android:text="Dorzucam"
         android:textAlignment="center" />
-
-
-
-
-
 
 </RelativeLayout>

@@ -9,9 +9,11 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -41,8 +43,6 @@ import pl.fitandyummy.ilebije.broadcast.srodek_piec_Notyfication_reciver;
 
 public class activity_srodek5_reload extends AppCompatActivity {
 
-
-    Bundle bundle;
     Timer timer;
 
     public ArrayList<ElementyKalendarza> listaTowarow;
@@ -56,7 +56,6 @@ public class activity_srodek5_reload extends AppCompatActivity {
     public PendingIntent pendingIntent2;
     public Typeface text1;
 
-
     private EditText mililitry;
     private EditText nazwaTowca;
     private Button btnInsert;
@@ -66,8 +65,6 @@ public class activity_srodek5_reload extends AppCompatActivity {
     private EditText data;
     private TextView nazwaTowaruu;
     private EditText edtokres;
-
-
 
     public String przekazywanapiec;
     private String przekazywana_iloscml;
@@ -83,29 +80,17 @@ public class activity_srodek5_reload extends AppCompatActivity {
     public int timegodziny;
     public int timeminuty;
 
-
-    public int dataDzienBOOT;
-    public int dataMiesiacBOOT;
-    public int dataRokBOOT;
-    public int timeGodzinyBOOT;
-    public int timeMinutyBOOT;
-
-
-
-
-   public String value;
+    public String value;
     public String date;
 
-   public Integer godziny ;
-   public Integer minuty ;
-   public Integer dni;
-   public Integer miesiace;
-   public Integer lata;
+    public Integer godziny;
+    public Integer minuty;
+    public Integer dni;
+    public Integer miesiace;
+    public Integer lata;
 
-
-
-   public String loadMlpiec;
-   public Integer loadOkrespiec;
+    public String loadMlpiec;
+    public Integer loadOkrespiec;
     public Integer loadIloscStrzalowpiec;
 
     public SharedPreferences preferences;
@@ -113,7 +98,7 @@ public class activity_srodek5_reload extends AppCompatActivity {
     public TextView terminNastepnegoBiciaTV;
     public String terminNastepnegoBiciaSTR;
     public String terminNastepnegoBiciaSTRLoad;
-
+    private int pierwszeBicie;
 
 
     @Override
@@ -125,25 +110,19 @@ public class activity_srodek5_reload extends AppCompatActivity {
 
         createRecyclerView();
 
-
-        mililitry =findViewById(R.id.edittext_ml);
-        nazwaTowca =findViewById(R.id.edittext_nazwaTowaru);
-        btnInsert=findViewById(R.id.button_insert);
-        btnReset=findViewById(R.id.button_reset);
-        data=findViewById(R.id.edittext_data);
-        liczba_szczalow=findViewById(R.id.edittext_liczna);
-        edt_godzina=findViewById(R.id.edittext_godzina);
+        mililitry = findViewById(R.id.edittext_ml);
+        nazwaTowca = findViewById(R.id.edittext_nazwaTowaru);
+        btnInsert = findViewById(R.id.button_insert);
+        btnReset = findViewById(R.id.button_reset);
+        data = findViewById(R.id.edittext_data);
+        liczba_szczalow = findViewById(R.id.edittext_liczna);
+        edt_godzina = findViewById(R.id.edittext_godzina);
         nazwaTowaruu = findViewById(R.id.nazwyCwiczen);
-        edtokres =findViewById(R.id.coIleDni);
+        edtokres = findViewById(R.id.coIleDni);
         terminNastepnegoBiciaTV = findViewById(R.id.terminNastepnegoBicia);
 
-
-
 //dodanie czcionki
-
-
-         text1 = Typeface.createFromAsset(getAssets(),"fonts/KO.ttf");
-
+        text1 = Typeface.createFromAsset(getAssets(), "fonts/KO.ttf");
 
         mililitry.setTypeface(text1);
         nazwaTowca.setTypeface(text1);
@@ -155,32 +134,19 @@ public class activity_srodek5_reload extends AppCompatActivity {
         edtokres.setTypeface(text1);
         terminNastepnegoBiciaTV.setTypeface(text1);
 
-
-
-
-
-
-
         terminNastepnegoBiciaSTR = terminNastepnegoBiciaSTRLoad;
-
         terminNastepnegoBiciaTV.setText(terminNastepnegoBiciaSTR);
 
-
-
-
-
-
-        przekazywana_iloscszczał= loadIloscStrzalowpiec;
-        przekazywanapiec =value;
-        okres= loadOkrespiec;
-        timegodziny=godziny;
-        timeminuty=minuty;
-        przekazywana_iloscml= loadMlpiec;
-        // porządkowanie zmiennych - bez tego przy potwierdzeniu bicia wypierdaa sie data
+        przekazywana_iloscszczał = loadIloscStrzalowpiec;
+        przekazywanapiec = value;
+        okres = loadOkrespiec;
+        timegodziny = godziny;
+        timeminuty = minuty;
+        przekazywana_iloscml = loadMlpiec;
+// porządkowanie zmiennych - bez tego przy potwierdzeniu bicia wypierdaa sie data
         dataDzien = dni;
         dataMiesiac = miesiace;
         dataRok = lata;
-
 
 // wstawia dane
         mililitry.setText(loadMlpiec);
@@ -188,44 +154,30 @@ public class activity_srodek5_reload extends AppCompatActivity {
         liczba_szczalow.setText(String.valueOf(loadIloscStrzalowpiec));
         edtokres.setText(String.valueOf(loadOkrespiec));
 
-
-
 // pobiera date i godzine z classy calendar
         final Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
         final int day = c.get(Calendar.DAY_OF_MONTH);
-
         final int h = c.get(Calendar.HOUR_OF_DAY);
         final int m = c.get(Calendar.MINUTE);
 
-
-
-
-
         data.setText("");
-
 
 //datapicker pobiera date i wstawia w tym przypadku w edittext
         datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
 
             @Override
-            public void onDateSet(DatePicker datedayPicker, int i, int i1, int i2 ) {
-
+            public void onDateSet(DatePicker datedayPicker, int i, int i1, int i2) {
                 TextView data = (TextView) findViewById(R.id.edittext_data);
-
-                dataRok=i;
-                dataMiesiac=i1;
-                dataDzien=i2;
-                data.setText(i2 + "/" + String.format("%02d", i1 + 1) + "/" + i+" ");
+                dataRok = i;
+                dataMiesiac = i1;
+                dataDzien = i2;
+                data.setText(i2 + "/" + String.format("%02d", i1 + 1) + "/" + i + " ");
             }
 
 
-
-        },year, month, day);
-
-
-
+        }, year, month, day);
 
         data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -234,394 +186,232 @@ public class activity_srodek5_reload extends AppCompatActivity {
             }
         });
 
-
 //to samo z godziną
         timepicker = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
 
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                 TextView godzina = (TextView) findViewById(R.id.edittext_godzina);
-                 timegodziny = hourOfDay;
-                 timeminuty = minute;
-               godzina.setText(hourOfDay + ":" + minute);
+                TextView godzina = (TextView) findViewById(R.id.edittext_godzina);
+                timegodziny = hourOfDay;
+                timeminuty = minute;
+                godzina.setText(hourOfDay + ":" + minute);
             }
-        },h,m,true);
-
-
+        }, h, m, true);
         edt_godzina.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 timepicker.show();
             }
         }));
 
 
-//klik przybijam
-        //
-        //
-        //
-        //
-        //
+//KLIK PRZYBIJAM
 
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-
-
+            public void onClick(View view) {
                 final Calendar c = Calendar.getInstance();
-
+                /*
                 final int day = c.get(Calendar.DAY_OF_MONTH);
-
                 final int year = c.get(Calendar.YEAR);
                 final int month = c.get(Calendar.MONTH);
-
 
                 int position = 0;
                 int liczba = przekazywana_iloscszczał;
 
-
-
-
-
-                // zerowanie listy towarów
-
+// zerowanie listy towarów
                 listaTowarow.clear();
 
-
-
 //petla wstawiająca kazdy kolejny strzał
+                for (int w = 0; w < liczba; w++) {
 
-                for ( int w = 0; w < liczba; w++ ) {
-
-
-
-
-
-
-                 //ustawia date i godzine dla notyfikacji date bierze z sheredpref
-
-
-
-                    c.set(Calendar.DAY_OF_MONTH,dni);
-                    c.set(Calendar.MONTH,miesiace);
-                    c.set(Calendar.YEAR,lata);
+ //ustawia date i godzine dla notyfikacji date bierze z sheredpref
+                    c.set(Calendar.DAY_OF_MONTH, pierwszeBicie);
+                    c.set(Calendar.MONTH, miesiace);
+                    c.set(Calendar.YEAR, lata);
                     c.set(Calendar.HOUR_OF_DAY, timegodziny);
-                    c.set(Calendar.MINUTE,timeminuty);
+                    c.set(Calendar.MINUTE, timeminuty);
 
-                    //dodaje okres do liczby dni, uzywane do wyswietlania kolejnej daty w spisie strzałów
-                    c.add(Calendar.DAY_OF_MONTH,w* loadOkrespiec);
+//dodaje okres do liczby dni, uzywane do wyswietlania kolejnej daty w spisie strzałów
+                    c.add(Calendar.DAY_OF_MONTH, w * loadOkrespiec);
 
 //formatuje dane na format daty
-                    Date dupa  = c.getTime();
+                    Date dupa = c.getTime();
                     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
                     String date = sdf.format(dupa);
 
-                    Date dupaTime  = c.getTime();
+                    Date dupaTime = c.getTime();
                     SimpleDateFormat sdfTime = new SimpleDateFormat("h:mm a");
                     String dateTime = sdfTime.format(dupaTime);
 
-                //tworzy array list
-                    listaTowarow.add(new ElementyKalendarza(R.drawable.lotka, przekazywanapiec +"", "  "+przekazywana_iloscml+"ml", "strzał nr. " , w+1 , date, dateTime));
+//tworzy array list
+                    listaTowarow.add(new ElementyKalendarza(R.drawable.lotka, przekazywanapiec + "", "  " + przekazywana_iloscml + "ml", "strzał nr. ", w + 1, date, dateTime));
 
-                 //odswierza i pokazuje array list
+//odswierza i pokazuje array list
                     mAdapter.notifyItemChanged(position);
                     mAdapter.notifyDataSetChanged();
-
-
-
-
                 }
-
-
-
-                    //ustawianie alarmu notyfikacji
-                //
-                //
-                //
-
-                    //pobiera date i czas z datapickera
-
-/*
-                    c.set(Calendar.DAY_OF_MONTH,day+ loadOkrespiec);
-                  //  c.set(Calendar.DAY_OF_MONTH,day);
-                    c.set(Calendar.MONTH,month);
-                    c.set(Calendar.YEAR,year);
-                    c.set(Calendar.HOUR_OF_DAY, timegodziny);
-                    c.set(Calendar.MINUTE,timeminuty);
 */
+//ustawianie alarmu notyfikacji
 
-
-                c.set(Calendar.DAY_OF_MONTH,dataDzien+loadOkrespiec);
-                c.set(Calendar.MONTH,dataMiesiac);
-                c.set(Calendar.YEAR,dataRok);
+//pobiera date i czas z datapickera
+                c.set(Calendar.DAY_OF_MONTH, dataDzien + loadOkrespiec);
+                c.set(Calendar.MONTH, dataMiesiac);
+                c.set(Calendar.YEAR, dataRok);
                 c.set(Calendar.HOUR_OF_DAY, timegodziny);
-                c.set(Calendar.MINUTE,timeminuty);
+                c.set(Calendar.MINUTE, timeminuty);
 
-                    //tworzy intencje zbudowaną w osobnej class'ie
-
-                    Intent intent = new Intent(getApplicationContext(), srodek_piec_Notyfication_reciver.class);
-                    pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),500, intent,PendingIntent.FLAG_UPDATE_CURRENT);
+//tworzy intencje zbudowaną w osobnej class'ie
+                Intent intent = new Intent(getApplicationContext(), srodek_piec_Notyfication_reciver.class);
+                pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 500, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 //alarm notyfikacji z interwałem dziennym razy okres  ( w nowej wersji juz bez interwału, tylko alarm )
-
-                    alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-
-/*
-                alarmManagerRaz = (AlarmManager) getSystemService(ALARM_SERVICE);
-                alarmManagerRaz.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), AlarmManager.INTERVAL_DAY*okres/24/4/3,pendingIntentTrzy);
-*/
+                alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
 
 //formatuje dane na format daty do toasta
-                Date dupa2  = c.getTime();
+                Date dupa2 = c.getTime();
                 SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
                 String date2 = sdf2.format(dupa2);
-
-                Date dupa3  = c.getTime();
+                Date dupa3 = c.getTime();
                 SimpleDateFormat sdf3 = new SimpleDateFormat("h:mm a");
                 String date3 = sdf3.format(dupa3);
 
-
-
-// wiadomosc toast
-
-                Toast.makeText(getApplicationContext(), " Potwierdzono zakłuty poślad !!!   Następne bicie  " +date2+" "+date3, Toast.LENGTH_LONG).show();
-
+                Toast.makeText(getApplicationContext(), " Potwierdzono zakłuty poślad !!!   Następne bicie  " + date2 + " " + date3, Toast.LENGTH_LONG).show();
 
 //formatuje dane na format daty
-
-                Date dupa  = c.getTime();
+                Date dupa = c.getTime();
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
                 String date = sdf.format(dupa);
-
-                Date dupaTime  = c.getTime();
+                Date dupaTime = c.getTime();
                 SimpleDateFormat sdfTime = new SimpleDateFormat("h:mm a");
                 String dateTime = sdfTime.format(dupaTime);
 
 // wstawia textview
-
-                terminNastepnegoBiciaSTR = "Następne bicie, "+" "+ date +",  "+ dateTime;
-
+                terminNastepnegoBiciaSTR = "Następne bicie, " + " " + date + ",  " + dateTime;
                 terminNastepnegoBiciaTV.setText(terminNastepnegoBiciaSTR);
 
 // porządkowanie zmiennych - bez tego przy potwierdzeniu bicia wypierdaa sie data
-
-                dataDzien = dni+loadOkrespiec;
+                dataDzien = dni + loadOkrespiec;
                 miesiace = dataMiesiac = miesiace;
                 dataRok = lata;
 
-
-
 // zapis array list
-
                 saveData();
 
 //zamyka apke z opoznieniem 3s
-
-               timer = new Timer();
+                timer = new Timer();
                 timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
                         finish();
 
                     }
-                },3000);
-
-
+                }, 3000);
             }
 
 
         });
 
-
-
-        //klik przesuwam
-        //
-        //
-        //
-        //
-        //
+//KLIK PRZESUWAM
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
                 if (nazwaTowca.getText().toString().equals("")) {
-
                     Toast.makeText(getApplicationContext(), "Uzupełnij dane Byku ", Toast.LENGTH_LONG).show();
-
                 } else if (data.getText().toString().equals("")) {
-
                     Toast.makeText(getApplicationContext(), "Uzupełnij dane Byku ", Toast.LENGTH_LONG).show();
-
                 } else if (liczba_szczalow.getText().toString().equals("")) {
-
                     Toast.makeText(getApplicationContext(), "Uzupełnij dane Byku ", Toast.LENGTH_LONG).show();
-
                 } else if (edtokres.getText().toString().equals("")) {
-
                     Toast.makeText(getApplicationContext(), "Uzupełnij dane Byku ", Toast.LENGTH_LONG).show();
-
                 } else if (edt_godzina.getText().toString().equals("")) {
-
                     Toast.makeText(getApplicationContext(), "Uzupełnij dane Byku ", Toast.LENGTH_LONG).show();
-
                 } else if (mililitry.getText().toString().equals("")) {
-
                     Toast.makeText(getApplicationContext(), "Uzupełnij dane Byku ", Toast.LENGTH_LONG).show();
+                } else {
 
-                } else{
-
-
-                    // zerowanie listy towarów
-
+// zerowanie listy towarów
                     listaTowarow.clear();
-
                     int position = 0;
-
                     int liczba = Integer.parseInt(liczba_szczalow.getText().toString());
 
-
-
-
 //petla wstawiająca kazdy kolejny strzał
-
-                    for ( int w = 0; w < liczba; w++ ) {
-
-                        nazwaTowca =findViewById(R.id.edittext_nazwaTowaru);
+                    for (int w = 0; w < liczba; w++) {
+                        nazwaTowca = findViewById(R.id.edittext_nazwaTowaru);
                         przekazywanapiec = nazwaTowca.getText().toString();
+                        mililitry = findViewById(R.id.edittext_ml);
+                        przekazywana_iloscml = mililitry.getText().toString();
+                        liczba_szczalow = findViewById(R.id.edittext_liczna);
+                        przekazywana_iloscszczał = Integer.parseInt(liczba_szczalow.getText().toString());
+                        edtokres = findViewById(R.id.coIleDni);
+                        okres = Integer.parseInt(edtokres.getText().toString());
 
-
-
-                        mililitry =findViewById(R.id.edittext_ml);
-                        przekazywana_iloscml =  mililitry.getText().toString();
-
-                        liczba_szczalow =findViewById(R.id.edittext_liczna);
-                        przekazywana_iloscszczał =  Integer.parseInt(liczba_szczalow.getText().toString());
-
-
-
-
-                        edtokres =findViewById(R.id.coIleDni);
-                        okres =  Integer.parseInt(edtokres.getText().toString());
-
-
-
-
-                        //ustawia date i godzine dla notyfikacji date bierze z datapickera
-
-                        c.set(Calendar.DAY_OF_MONTH,dataDzien);
-                        c.set(Calendar.MONTH,dataMiesiac);
-                        c.set(Calendar.YEAR,dataRok);
+//ustawia date i godzine dla notyfikacji date bierze z datapickera
+                        c.set(Calendar.DAY_OF_MONTH, dataDzien);
+                        c.set(Calendar.MONTH, dataMiesiac);
+                        c.set(Calendar.YEAR, dataRok);
                         c.set(Calendar.HOUR_OF_DAY, timegodziny);
-                        c.set(Calendar.MINUTE,timeminuty);
+                        c.set(Calendar.MINUTE, timeminuty);
 
-                        //dodaje okres do liczby dni, uzywane do wyswietlania kolejnej daty w spisie strzałów
-
-                        c.add(Calendar.DAY_OF_MONTH,w*loadOkrespiec);
-
+//dodaje okres do liczby dni, uzywane do wyswietlania kolejnej daty w spisie strzałów
+                        c.add(Calendar.DAY_OF_MONTH, w * loadOkrespiec);
 
 //formatuje dane na format daty
-                        Date dupa  = c.getTime();
+                        Date dupa = c.getTime();
                         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
                         String date = sdf.format(dupa);
-
-                        Date dupaTime  = c.getTime();
+                        Date dupaTime = c.getTime();
                         SimpleDateFormat sdfTime = new SimpleDateFormat("h:mm a");
                         String dateTime = sdfTime.format(dupaTime);
 
+//tworzy array list
+                        listaTowarow.add(new ElementyKalendarza(R.drawable.lotka, przekazywanapiec + "", "  " + przekazywana_iloscml + "ml", "strzał nr. ", w + 1, date, dateTime));
 
-
-
-                        //tworzy array list
-                        listaTowarow.add(new ElementyKalendarza(R.drawable.lotka, przekazywanapiec +"", "  "+przekazywana_iloscml+"ml", "strzał nr. " , w+1 , date, dateTime));
-
-                        //odswierza i pokazuje array list
+//odswierza i pokazuje array list
                         mAdapter.notifyItemChanged(position);
                         mAdapter.notifyDataSetChanged();
-
                     }
-
-
-
 
                     //ustawianie alarmu notyfikacji
 
-                    //pobiera date i czas z datapickera
-
-                    c.set(Calendar.DAY_OF_MONTH,dataDzien);
-                    c.set(Calendar.MONTH,dataMiesiac);
-                    c.set(Calendar.YEAR,dataRok);
+//pobiera date i czas z datapickera
+                    c.set(Calendar.DAY_OF_MONTH, dataDzien);
+                    c.set(Calendar.MONTH, dataMiesiac);
+                    c.set(Calendar.YEAR, dataRok);
                     c.set(Calendar.HOUR_OF_DAY, timegodziny);
-                    c.set(Calendar.MINUTE,timeminuty);
+                    c.set(Calendar.MINUTE, timeminuty);
 
                     //tworzy intencje zbudowaną w osobnej class'ie
-
                     Intent intent = new Intent(getApplicationContext(), srodek_piec_Notyfication_reciver.class);
-                    pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),500, intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                    pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 500, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 //alarm notyfikacji z interwałem dziennym razy okres (teraaz bez interwału, tylko wysyłła)
-
-
-
                     alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
                     alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
 
-
-/*
-                alarmManagerRaz = (AlarmManager) getSystemService(ALARM_SERVICE);
-                alarmManagerRaz.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), AlarmManager.INTERVAL_DAY*okres,pendingIntentTrzy);
-*/
 //formatuje dane na format daty do toasta
-                    Date dupa2  = c.getTime();
+                    Date dupa2 = c.getTime();
                     SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
                     String date2 = sdf2.format(dupa2);
-
-                    Date dupa3  = c.getTime();
+                    Date dupa3 = c.getTime();
                     SimpleDateFormat sdf3 = new SimpleDateFormat("h:mm a");
                     String date3 = sdf3.format(dupa3);
 
-
-
-// wiadomosc toast
-
-             //       Toast.makeText(getApplicationContext(), " Potwierdzono zakłuty poślad !!!   Następne bicie  " +date2+" "+date3, Toast.LENGTH_LONG).show();
-
+                    Toast.makeText(getApplicationContext(), " Potwierdzono zakłuty poślad !!!   Następne bicie  " + date2 + " " + date3, Toast.LENGTH_LONG).show();
 
 //formatuje dane na format daty
-
-                    Date dupa  = c.getTime();
+                    Date dupa = c.getTime();
                     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
                     String date = sdf.format(dupa);
-
-                    Date dupaTime  = c.getTime();
+                    Date dupaTime = c.getTime();
                     SimpleDateFormat sdfTime = new SimpleDateFormat("h:mm a");
                     String dateTime = sdfTime.format(dupaTime);
 
 // wstawia textview
-
-                    terminNastepnegoBiciaSTR = "Następne bicie, "+" "+ date +",  "+ dateTime;
-
+                    terminNastepnegoBiciaSTR = "Następne bicie, " + " " + date + ",  " + dateTime;
                     terminNastepnegoBiciaTV.setText(terminNastepnegoBiciaSTR);
-/*
-// porządkowanie zmiennych - bez tego przy potwierdzeniu bicia wypierdaa sie data
-                    dni = dataDzien = dni;
-                    miesiace = dataMiesiac = miesiace;
-                    dataRok = lata;
 
-
-//po o aby zapamietywal dzien ostatniego bicia dla BOOT Recivera
-                    dataDzienBOOT = dataDzien + loadOkrespiec;
-                    dataMiesiacBOOT = dataMiesiac;
-                    dataMiesiacBOOT = dataRok;
-                    timeGodzinyBOOT = timegodziny;
-                    timeMinutyBOOT = timeminuty;
-
-//po o aby zapamietywal dzien ostatniego bicia
-                    dataDzien = dataDzien+ loadOkrespiec;
-*/
 // zapis array list
                     saveData();
 
@@ -632,160 +422,105 @@ public class activity_srodek5_reload extends AppCompatActivity {
                             finish();
 
                         }
-                    },3000);
-
-
-                }}
-
-
+                    }, 3000);
+                }
+            }
         });
-
-
 
 //przycisk powrotu na pasku
         ImageView back = (ImageView) findViewById(R.id.toolbarArrowbackBtn);
-
-
-        //klik powrót
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent doPreMainIntent = new Intent(getApplicationContext(),PudelkoActivity.class);
+                Intent doPreMainIntent = new Intent(getApplicationContext(), PudelkoActivity.class);
                 startActivity(doPreMainIntent);
             }
         });
 
 
-
 //przycisk powrotu na pasku
         ImageView ilebije = (ImageView) findViewById(R.id.toolchangeBtn);
-
-
-        //klik do ilebije
         ilebije.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent doMainIntent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent doMainIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(doMainIntent);
             }
         });
-
-
-
     }
 
-
-    public void createRecyclerView(){
+    public void createRecyclerView() {
         mRecyclerView = findViewById(R.id.recyclerKalendarz);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mAdapter = new AdapterTowarow(listaTowarow);
-
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }
 
-
-    private void saveData(){
-
-
+    private void saveData() {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editorr = preferences.edit();
 
         boolean boolBoot;
 
-        if (listaTowarow==null){
+        if (listaTowarow == null) {
             boolBoot = false;
-        } else  {
+        } else {
             boolBoot = true;
         }
-        editorr.putBoolean("bollBoot", boolBoot);
-
+        editorr.putBoolean("bollBootpiec", boolBoot);
         editorr.putString("keypiec", przekazywanapiec);
-        editorr.putInt("godzinapiec",timegodziny);
-        editorr.putInt("minutapiec",timeminuty);
+        editorr.putInt("godzinapiec", timegodziny);
+        editorr.putInt("minutapiec", timeminuty);
 
-        // przekazywanie daty dalej po to aby wstawiał date od pierwszego bicia
-        editorr.putInt("dzienBiciapiec",dataDzien);
-        editorr.putInt("miesiacBiciapiec",dataMiesiac);
-        editorr.putInt("rokBiciapiec",dataRok);
-
-
-   /*       // przekazywanie daty i godziny do BOOTA
-        editorr.putInt("dzienBiciapiecBOOT",dataDzienBOOT);
-      editorr.putInt("miesiacBiciapiecBOOT",dataMiesiacBOOT);
-        editorr.putInt("rokBiciapiecBOOT",dataRokBOOT);
-        editorr.putInt("godzinapiecBOOT",timeGodzinyBOOT);
-        editorr.putInt("minutapiecBOOT",timeMinutyBOOT);
-*/
-        editorr.putString("mlpiec",przekazywana_iloscml);
-        editorr.putInt("okrespiec",okres);
-        editorr.putInt("oloscStrzalowpiec",przekazywana_iloscszczał);
-
-        editorr.putString("info5",terminNastepnegoBiciaSTR);
+// przekazywanie daty dalej po to aby wstawiał date od pierwszego bicia
+        editorr.putInt("dzienBiciapiec", dataDzien);
+        editorr.putInt("miesiacBiciapiec", dataMiesiac);
+        editorr.putInt("rokBiciapiec", dataRok);
+        editorr.putString("mlpiec", przekazywana_iloscml);
+        editorr.putInt("okrespiec", okres);
+        editorr.putInt("oloscStrzalowpiec", przekazywana_iloscszczał);
+        editorr.putString("info5", terminNastepnegoBiciaSTR);
 
         editorr.apply();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("szered prefpiec",0);
+        SharedPreferences sharedPreferences = getSharedPreferences("szered prefpiec", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
         String json = gson.toJson(listaTowarow);
-        editor.putString("dana dla jnosapiec",json);
+        editor.putString("dana dla jnosapiec", json);
         editor.apply();
     }
 
-    private void loadData(){
-
-
-//editorr.putInt("dzienBicia",dataDzien);
-//        editorr.putInt("miesiacBicia",dataMiesiac);
-//        editorr.putInt("rokBicia",dataRok);
-
-
+    private void loadData() {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-
         value = preferences.getString("keypiec", "defaultValue");
-        godziny = preferences.getInt("godzinapiec",99);
-        minuty = preferences.getInt("minutapiec",99);
+        godziny = preferences.getInt("godzinapiec", 99);
+        minuty = preferences.getInt("minutapiec", 99);
 
 // przekazywanie daty  po to aby wstawiał date od pierwszego bicia
-        dni = preferences.getInt("dzienBiciapiec",99);
-        miesiace = preferences.getInt("miesiacBiciapiec",99);
-        lata = preferences.getInt("rokBiciapiec",99);
-
-
+        dni = preferences.getInt("dzienBiciapiec", 99);
+        miesiace = preferences.getInt("miesiacBiciapiec", 99);
+        lata = preferences.getInt("rokBiciapiec", 99);
+        pierwszeBicie = preferences.getInt("pierwszeBiciepiec", 99);
         loadMlpiec = preferences.getString("mlpiec", "defaultValue");
-        loadOkrespiec = preferences.getInt("okrespiec",99);
-        loadIloscStrzalowpiec = preferences.getInt("oloscStrzalowpiec",99);
+        loadOkrespiec = preferences.getInt("okrespiec", 99);
+        loadIloscStrzalowpiec = preferences.getInt("oloscStrzalowpiec", 99);
 
         terminNastepnegoBiciaSTRLoad = preferences.getString("info5", "  ");
 
-
-        //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-
-        SharedPreferences sharedPreferences = getSharedPreferences("szered prefpiec",0);
+        SharedPreferences sharedPreferences = getSharedPreferences("szered prefpiec", 0);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("dana dla jnosapiec", null);
+        Type type = new TypeToken<ArrayList<ElementyKalendarza>>() {
+        }.getType();
+        listaTowarow = gson.fromJson(json, type);
 
-
-        Type type = new TypeToken<ArrayList<ElementyKalendarza>>() {}.getType();
-        listaTowarow = gson.fromJson(json,type);
-
-        if (listaTowarow==null){
-
+        if (listaTowarow == null) {
             listaTowarow = new ArrayList<ElementyKalendarza>();
-
-
-
         }
-
-
-
     }
-
-
-
-
 }
 
 

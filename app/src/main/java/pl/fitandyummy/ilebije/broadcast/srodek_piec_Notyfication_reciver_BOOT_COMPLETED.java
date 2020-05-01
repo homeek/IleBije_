@@ -14,9 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
 
-public class srodek_piec_Notyfication_reciver_BOOT_COMPLETED extends BroadcastReceiver  {
-
-
+public class srodek_piec_Notyfication_reciver_BOOT_COMPLETED extends BroadcastReceiver {
 
     public AlarmManager alarmManagerPiec;
 
@@ -27,28 +25,20 @@ public class srodek_piec_Notyfication_reciver_BOOT_COMPLETED extends BroadcastRe
     public int dataDzien;
     public int timegodziny;
     public int timeminuty;
-
     public Integer loadOkresszesc;
-
     public SharedPreferences preferences;
     public String terminNastepnegoBiciaSTR;
-
     public Timer timer;
 
     Boolean boolBoot = false;
 
-
-
     @Override
     public void onReceive(final Context context5, Intent intent5) {
 
-
         context5.getApplicationContext();
-
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context5);
 
-//value = preferences.getString("keyszesc", "defaultValue");
         timegodziny = preferences.getInt("godzinapiec", 99);
         timeminuty = preferences.getInt("minutapiec", 99);
 
@@ -56,58 +46,28 @@ public class srodek_piec_Notyfication_reciver_BOOT_COMPLETED extends BroadcastRe
         dataDzien = preferences.getInt("dzienBiciapiec", 99);
         dataMiesiac = preferences.getInt("miesiacBiciapiec", 99);
         dataRok = preferences.getInt("rokBiciapiec", 99);
-
         loadOkresszesc = preferences.getInt("okrespiec", 99);
 
-        boolBoot = preferences.getBoolean("bollBoot",false);
+        boolBoot = preferences.getBoolean("bollBootpiec", false);
 
-
-
-        if (boolBoot == false){
-
-            Toast.makeText(context5, "   " , Toast.LENGTH_LONG).show();
-
+        if (boolBoot == false) {
+            Toast.makeText(context5, " piaty pusty  ", Toast.LENGTH_LONG).show();
 
         } else if (boolBoot == true) {
-
             Toast.makeText(context5, "    ", Toast.LENGTH_LONG).show();
 
-
-            //  Toast.makeText(context5, " Potwierdzono zakłuty poślad !!!   Następne bicie  ", Toast.LENGTH_LONG).show();
-
-
+//pobiera date i czas z datapickera
             final Calendar c = Calendar.getInstance();
-            final int year = c.get(Calendar.YEAR);
-            final int month = c.get(Calendar.MONTH);
-            final int day = c.get(Calendar.DAY_OF_MONTH);
-
-
-            final int h = c.get(Calendar.HOUR_OF_DAY);
-            final int m = c.get(Calendar.MINUTE);
-
-
-            //pobiera date i czas z datapickera
-
-
             c.set(Calendar.DAY_OF_MONTH, dataDzien);
             c.set(Calendar.MONTH, dataMiesiac);
             c.set(Calendar.YEAR, dataRok);
             c.set(Calendar.HOUR_OF_DAY, timegodziny);
             c.set(Calendar.MINUTE, timeminuty);
 
-/*
-        c.set(Calendar.DAY_OF_MONTH,day);
-        c.set(Calendar.MONTH,month);
-        c.set(Calendar.YEAR,year);
-        c.set(Calendar.HOUR_OF_DAY, h);
-        c.set(Calendar.MINUTE,m+6);
-*/
-
-            //formatuje dane na format daty do toasta
+//formatuje dane na format daty do toasta
             Date dupa2 = c.getTime();
             SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
             String date2 = sdf2.format(dupa2);
-
             Date dupa3 = c.getTime();
             SimpleDateFormat sdf3 = new SimpleDateFormat("h:mm a");
             String date3 = sdf3.format(dupa3);
@@ -120,22 +80,13 @@ public class srodek_piec_Notyfication_reciver_BOOT_COMPLETED extends BroadcastRe
             editorr.putString("info5", terminNastepnegoBiciaSTR);
             editorr.apply();
 
-// wiadomosc toast
-
-            //  Toast.makeText(context5, " Potwierdzono zakłuty poślad !!!   Następne bicie T5  " + date2 + " " + date3, Toast.LENGTH_LONG).show();
-
-
-            //tworzy intencje zbudowaną w osobnej class'ie
-
+//tworzy intencje zbudowaną w osobnej class'ie
             Intent intentPiec = new Intent(context5, srodek_piec_Notyfication_reciver.class);
             pendingIntentPiec = PendingIntent.getBroadcast(context5, 500, intentPiec, PendingIntent.FLAG_UPDATE_CURRENT);
 
 //alarm notyfikacji z interwałem dziennym razy okres  ( w nowej wersji juz bez interwału, tylko alarm )
-
             alarmManagerPiec = (AlarmManager) context5.getSystemService(Context.ALARM_SERVICE);
             alarmManagerPiec.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntentPiec);
         }
     }
-
-
 }

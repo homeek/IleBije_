@@ -13,8 +13,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-
         android:layout_margin="10dp">
 
         <ImageView
@@ -30,8 +28,8 @@
             android:id="@+id/RestWork"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/nazwyCwiczen"
+            android:layout_alignParentTop="true"
             android:text="strzal nr"
             android:textColor="@color/czarny"
             android:textSize="20dp"
@@ -41,9 +39,7 @@
             android:id="@+id/ktoryET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_alignParentTop="true"
-
             android:layout_toEndOf="@+id/RestWork"
             android:text="2."
             android:textColor="@color/czarny"
@@ -65,8 +61,8 @@
             android:id="@+id/godzinaStartu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/nazwyCwiczen"
             android:layout_marginTop="30dp"
+            android:layout_toEndOf="@+id/nazwyCwiczen"
             android:text="2ml"
             android:textColor="@color/czarny"
             android:textSize="14dp"
@@ -88,8 +84,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
             android:text="godzina"
             android:textColor="@color/czarny"
             android:textSize="14dp"

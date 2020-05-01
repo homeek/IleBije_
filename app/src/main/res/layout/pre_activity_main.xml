@@ -9,8 +9,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/tool_bar"
-        />
+        layout="@layout/tool_bar" />
 
     <ImageView
         android:id="@+id/logos"
@@ -18,28 +17,23 @@
         android:layout_height="300dp"
         android:layout_below="@+id/toolbar"
         android:layout_alignParentStart="true"
-
         android:alpha="0.6"
         android:src="@drawable/logo1200dwa" />
 
-
-
-
     <LinearLayout
-        android:layout_below="@+id/logos"
         android:id="@+id/mainKokpit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/logos"
         android:orientation="vertical">
-
 
         <LinearLayout
             android:id="@+id/main_batony"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/ilebije"
@@ -57,8 +51,8 @@
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
                 android:background="@color/transporange"
-                android:text="Ile ćwiczy "
                 android:onClick="FBIB"
+                android:text="Ile ćwiczy "
                 android:textAllCaps="false" />
 
             <Button
@@ -72,25 +66,44 @@
                 android:text="Kiedy Bije"
                 android:textAllCaps="false" />
 
-    </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textButtonZaloguj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:text=" Masz konto ?? Zaloguj sie. "
+            android:textAlignment="center"
+            android:textColor="@color/czarny"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textButtonWyloguj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:onClick="wyloguj"
+            android:text=" WYLOGUJ "
+            android:textAlignment="center"
+            android:textColor="@color/czarny"
+            android:textSize="12sp"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
-
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
-    </com.google.android.gms.ads.AdView>
-
-
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448" />
 
 </RelativeLayout>
-
-

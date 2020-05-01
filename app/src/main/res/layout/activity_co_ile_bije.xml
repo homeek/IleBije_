@@ -2,25 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pl.fitandyummy.ilebije.CoIleBije"
     android:orientation="vertical"
-
-    >
+    tools:context="pl.fitandyummy.ilebije.CoIleBije">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/tool_bar_kiedybije"
-        />
-
+        layout="@layout/tool_bar_kiedybije" />
 
     <LinearLayout
         android:id="@+id/kokpit"
-        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical">
-
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/textMocarnosc"
@@ -32,7 +27,6 @@
             android:textAlignment="center"
             android:textColor="@color/czarny"
             android:textSize="18sp" />
-
 
         <EditText
             android:id="@+id/mocarnosc"
@@ -67,8 +61,8 @@
                 android:layout_height="30dp"
                 android:layout_margin="5dp"
                 android:background="@color/transporange"
-                android:text="Ile  [ml]"
                 android:onClick="ileMl"
+                android:text="Ile  [ml]"
                 android:textAllCaps="false" />
 
             <Button
@@ -78,46 +72,34 @@
                 android:layout_margin="5dp"
                 android:background="@color/transporange"
                 android:elevation="0dp"
-
                 android:text="Co ile  [dni]"
                 android:textAllCaps="false" />
 
-
         </LinearLayout>
-
-
-
-
 
     </LinearLayout>
 
-
-
     <ImageView
 
-    android:paddingTop="30dp"
-        android:layout_below="@id/kokpit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/kokpit"
         android:alpha="0.4"
-        android:src="@drawable/fiolka"/>
-
-
+        android:paddingTop="30dp"
+        android:src="@drawable/fiolka" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/kokpit"
-        android:paddingTop="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:orientation="vertical"
-            >
-
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/TXT1"
@@ -137,23 +119,19 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:orientation="horizontal"
-            >
-
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/mililitryNaDni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
                 android:gravity="center_vertical|center_horizontal|center"
                 android:hint="[ml]"
                 android:inputType="numberDecimal"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
-
 
             <TextView
                 android:id="@+id/TXT2"
@@ -167,9 +145,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -177,7 +153,6 @@
             android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingTop="10dp">
-
 
             <TextView
                 android:id="@+id/TXT3"
@@ -191,7 +166,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-
         </LinearLayout>
 
         <LinearLayout
@@ -200,7 +174,6 @@
             android:layout_gravity="center"
             android:orientation="horizontal"
             android:paddingTop="1dp">
-
 
             <EditText
                 android:id="@+id/mgNaDni"
@@ -225,7 +198,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-
         </LinearLayout>
 
         <Button
@@ -233,19 +205,16 @@
             android:layout_width="250dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:onClick="licz"
             android:background="@color/transporange"
+            android:onClick="licz"
             android:text="pomóż koledze" />
-
-
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
+            android:orientation="vertical"
             android:paddingTop="20dp">
-
 
             <TextView
                 android:id="@+id/TXT5"
@@ -281,26 +250,20 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-
         </LinearLayout>
-
-
-
 
     </LinearLayout>
 
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-7671780201496787/9727651448">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-7671780201496787/9727651448" />
 
 
 </RelativeLayout>
